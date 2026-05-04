@@ -109,7 +109,7 @@ let idx = 0,
   clock = null,
   quizQuestions = [];
 
-const remoteLeaderboardUrl = "http://localhost:52345/leaderboard"; // Change this to your deployed backend URL when you host it remotely.
+const remoteLeaderboardUrl = "https://hoangsa-truongsa.onrender.com/leaderboard"; // Set this to your deployed backend URL after deploy, e.g. https://your-app.onrender.com/leaderboard
 
 function shuffleArray(array) {
   return array
