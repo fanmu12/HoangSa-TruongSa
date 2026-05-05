@@ -1,103 +1,111 @@
 const questions = [
-  { question: "Đội Hoàng Sa của Việt Nam được ghi nhận rõ từ khoảng thời gian nào?", options: ["Thế kỷ XVII", "Thế kỷ XX", "Sau năm 1975", "Thế kỷ XXI"], answer: 0 },
-  { question: "Quần đảo nào nằm ở khu vực bắc Biển Đông?", options: ["Trường Sa", "Hoàng Sa", "Phú Quốc", "Côn Đảo"], answer: 1 },
-  { question: "Đội Hoàng Sa, Bắc Hải có nhiệm vụ chính nào trong lịch sử?", options: ["Quản lý, khai thác và thực thi chủ quyền trên biển đảo", "Chỉ làm du lịch biển", "Chỉ nghiên cứu nông nghiệp", "Không liên quan đến biển đảo"], answer: 0 },
-  { question: "Đặc điểm địa lý nổi bật của Trường Sa là gì?", options: ["Chỉ có một đảo lớn", "Gồm nhiều đảo, bãi đá và bãi ngầm", "Nằm trên đất liền", "Không có sinh vật biển"], answer: 1 },
-  { question: "Quá trình hình thành đảo san hô thường gắn với yếu tố nào?", options: ["Sinh trưởng san hô và bồi tụ trầm tích", "Mưa đá trên núi", "Đốt rừng", "Băng hà lục địa"], answer: 0 },
-  { question: "Hành động nào giúp bảo vệ chủ quyền trên không gian mạng?", options: ["Chia sẻ ngay khi chưa kiểm chứng", "Kiểm chứng nguồn tin trước khi chia sẻ", "Đăng bài kích động", "Không cần quan tâm nguồn tin"], answer: 1 },
-  { question: "Trường Sa có đặc điểm nổi bật nào?", options: ["Chỉ có một đảo lớn", "Gồm nhiều đảo, bãi đá, bãi ngầm", "Nằm trên đất liền", "Không có giá trị sinh thái"], answer: 1 },
-  { question: "Hoàng Sa và Trường Sa có ý nghĩa gì đối với Việt Nam?", options: ["Quan trọng về chủ quyền, kinh tế biển và an ninh quốc gia", "Chỉ để du lịch", "Không có vai trò nào", "Chỉ có ý nghĩa thời tiết"], answer: 0 },
-  { question: "Mục tiêu chính của website này là gì?", options: ["Chỉ để giải trí", "Giúp học sinh hiểu lịch sử, địa lý và ý thức bảo vệ chủ quyền", "Bán sản phẩm du lịch", "Thay sách giáo khoa"], answer: 1 },
-  { question: "Thông điệp đúng khi học về biển đảo là gì?", options: ["Hiểu đúng - Chia sẻ đúng - Hành động đúng", "Nghe gì chia sẻ nấy", "Chỉ học khi kiểm tra", "Không cần quan tâm chủ quyền"], answer: 0 },
-  { question: "Quần đảo Hoàng Sa gần thành phố nào của Việt Nam?", options: ["Đà Nẵng", "Hà Nội", "Hồ Chí Minh", "Cần Thơ"], answer: 0 },
-  { question: "Đảo nào thường được nhắc đến trong Trường Sa?", options: ["Song Tử Tây", "Phú Quốc", "Côn Đảo", "Bạch Long Vĩ"], answer: 0 },
-  { question: "Hệ sinh thái nào rất quan trọng ở Hoàng Sa và Trường Sa?", options: ["San hô", "Rừng mưa", "Đồng cỏ", "Rừng ngập mặn"], answer: 0 },
-  { question: "Khi nghe tin không rõ nguồn, bạn nên làm gì?", options: ["Kiểm chứng với nguồn tin chính thống", "Chia sẻ ngay", "Ignore tất cả", "Tin luôn"], answer: 0 },
-  { question: "Tạm dịch đúng nhất: 'Chủ quyền biển đảo' là gì?", options: ["Quyền kiểm soát vùng biển", "Quyền dừng đi biển", "Quyền săn cá", "Quyền cấm tàu"], answer: 0 },
-  { question: "Động tác nào giúp gìn giữ môi trường biển?", options: ["Không xả rác ra biển", "Vứt chai xuống cát", "Đốt rác trên bờ", "Lãng phí nước"], answer: 0 },
-  { question: "Ai là người giữ gìn chủ quyền trên biển?", options: ["Hải quân và người dân", "Chỉ du khách", "Chỉ chính phủ nước ngoài", "Chỉ nhà khoa học"], answer: 0 },
-  { question: "Công việc nào giúp bảo vệ vùng biển?", options: ["Giữ gìn thông tin chính xác", "Lan truyền tin sai", "Làm ngơ vấn đề", "Phá hoại tài nguyên"], answer: 0 },
-  { question: "Vì sao san hô cần được bảo vệ?", options: ["Là nơi cư trú của nhiều loài biển", "Không có ích lợi nào", "Chỉ đẹp cho du lịch", "Gây cản trở tàu"], answer: 0 },
-  { question: "Nước biển ở Hoàng Sa, Trường Sa thuộc đại dương nào?", options: ["Thái Bình Dương", "Ấn Độ Dương", "Đại Tây Dương", "Nam Băng Dương"], answer: 0 },
-  { question: "Điều gì giúp ta giữ bình yên cho ngư dân?", options: ["Tôn trọng chủ quyền và hỗ trợ thông tin", "Bỏ qua tin giả", "Quan tâm riêng mình", "Để thông tin sai lan truyền"], answer: 0 },
-  { question: "Biển Đông có tầm quan trọng như thế nào đối với Việt Nam?", options: ["Kinh tế, an ninh và môi trường", "Chỉ dùng để giải trí", "Không quan trọng", "Chỉ thuộc về nước khác"], answer: 0 },
-  { question: "Cách tốt nhất để học về biển đảo là gì?", options: ["Tìm hiểu từ nguồn chính thống", "Tin lời đồn đại", "Chỉ đọc một lần", "Không cần hỏi"], answer: 0 },
-  { question: "Loại hình nào thường xuất hiện quanh đảo san hô?", options: ["Rạn san hô", "Sa mạc", "Rừng thông", "Hoang mạc"], answer: 0 },
-  { question: "Công cụ nào giúp nghiên cứu biển đảo?", options: ["Bản đồ và vệ tinh", "Loa phóng thanh", "Ô tô đua", "Xe tăng"], answer: 0 },
-  { question: "Đâu là hành vi yêu nước đúng?", options: ["Giữ gìn thông tin chính xác", "Chia sẻ tin giả", "Gây hấn trên mạng", "Thờ ơ với biển"], answer: 0 },
-  { question: "Hãy chọn một hành động bảo vệ môi trường biển.", options: ["Dọn rác sau chuyến đi", "Chuẩn bị túi nhựa", "Vứt dầu nhớt xuống biển", "Phá san hô"], answer: 0 },
-  { question: "Tại sao Hoàng Sa, Trường Sa luôn được nhắc đến?", options: ["Vì giá trị chủ quyền và sinh học", "Vì là nơi hoang vu", "Vì không có người ở", "Vì chỉ là truyền thuyết"], answer: 0 },
-  { question: "Loại động vật nào thường sống trong rạn san hô?", options: ["Cá và động vật biển", "Sư tử", "Hươu cao cổ", "Chim cánh cụt"], answer: 0 },
-  { question: "Dấu hiệu nào cho thấy biển sạch?", options: ["Nước trong và san hô khỏe", "Rác nhiều", "Nước đục và mùi hôi", "Không có hành động"], answer: 0 },
-  { question: "Nếu muốn kiểm chứng tin tức về chủ quyền, bạn sẽ chọn gì?", options: ["Nguồn tin chính thức", "MXH trôi nổi", "Lời đồn chưa kiểm chứng", "Bình luận cá nhân"], answer: 0 },
-  { question: "Đâu là nhiệm vụ của học sinh đối với biển đảo?", options: ["Tìm hiểu và chia sẻ chính xác", "Phớt lờ chủ quyền", "Tin tin sai", "Chỉ quan tâm giải trí"], answer: 0 },
-  { question: "Biển Đông có hiện tượng thời tiết nào thường gặp?", options: ["Bão và gió mùa", "Tuyết rơi", "Địa chấn đất liền", "Nắng nóng nội địa"], answer: 0 },
-  { question: "Sự khác biệt lớn nhất giữa Hoàng Sa và Trường Sa là gì?", options: ["Vị trí địa lý và cấu tạo đảo", "Cùng một đảo", "Nằm trên đất liền", "Không có gì khác biệt"], answer: 0 },
-  { question: "Trong các hành động sau, hành động nào giúp tăng cường chủ quyền?", options: ["Học tập và lan truyền thông tin đúng", "Lan truyền tin giả", "Bỏ qua tin chính thống", "Phá hoại môi trường"], answer: 0 },
-  { question: "Đảo san hô thường hình thành từ gì?", options: ["Xác san hô và bột cát", "Đất sét", "Núi lửa lớn", "Băng đá"], answer: 0 },
-  { question: "Cần làm gì nếu gặp tin sai về biển đảo?", options: ["Không chia sẻ và báo tin đúng", "Chia sẻ ngay để giải quyết", "Tin ngay cả khi không rõ", "Bỏ qua hoàn toàn"], answer: 0 },
-  { question: "Đâu là lợi ích của việc giữ gìn san hô?", options: ["Bảo vệ đa dạng sinh học và ngư trường", "Tăng tốc tàu thuyền", "Làm đẹp bờ biển", "Không có lợi ích"], answer: 0 },
-  { question: "Quyền chủ quyền biển đảo được xác lập bởi ai?", options: ["Nhà nước Việt Nam và pháp luật quốc tế", "Người dân duy nhất", "Nước khác", "Ai cũng có thể"], answer: 0 },
-  { question: "Biển Động giúp gì cho Việt Nam?", options: ["Kinh tế, hậu cần, an ninh", "Chỉ giúp du lịch", "Chỉ tạo sóng", "Không có vai trò gì"], answer: 0 },
-  { question: "Ai cần tham gia bảo vệ biển đảo?", options: ["Mọi người dân và thế hệ trẻ", "Chỉ người lớn", "Chỉ nhà khoa học", "Chỉ chính phủ"], answer: 0 },
-  { question: "Ở miền Trung, đảo Hoàng Sa gần nơi nào nhất?", options: ["Đà Nẵng", "Quảng Ninh", "Cần Thơ", "Bình Dương"], answer: 0 },
-  { question: "Khi nào nên dùng nguồn tin chính thống?", options: ["Khi học về lịch sử và biển đảo", "Khi muốn lan truyền tin đồn", "Khi không quan tâm", "Khi tin sai"], answer: 0 },
-  { question: "Đâu là cách tốt nhất để giữ gìn môi trường biển khi đi du lịch?", options: ["Không xả rác và giữ gìn cảnh quan", "Làm ồn ào", "Thả rác xuống biển", "Phá hoại san hô"], answer: 0 },
-  { question: "Tại sao Hoàng Sa, Trường Sa quan trọng với an ninh quốc gia?", options: ["Nằm ở vị trí chiến lược và kiểm soát biển", "Chỉ là hòn đảo nhỏ", "Không liên quan đến an ninh", "Nước khác sở hữu"], answer: 0 },
-  { question: "Biển Đông có thể giúp nước ta phát triển gì?", options: ["Ngư nghiệp và giao thông hàng hải", "Khai thác than", "Trồng lúa", "Chăn nuôi bò"], answer: 0 },
-  { question: "Thách thức lớn nhất của bảo tồn san hô là gì?", options: ["Ô nhiễm và hoạt động khai thác", "Thiếu khách du lịch", "Mưa quá nhiều", "Quá lạnh"], answer: 0 },
-  { question: "Khi học về biển đảo, điều gì không nên làm?", options: ["Tin tin chưa kiểm chứng", "Tìm hiểu từ sách vở", "Trao đổi với bạn bè", "Nghiên cứu lịch sử"], answer: 0 },
-  { question: "Nước nào gần Việt Nam nhất trong Biển Đông?", options: ["Trung Quốc", "Canada", "Brazil", "Ấn Độ"], answer: 0 },
-  { question: "Tại sao học sinh nên biết về Trường Sa?", options: ["Để nâng cao ý thức chủ quyền", "Để giải trí", "Để làm bài tập về nhà", "Không cần biết"], answer: 0 },
-  { question: "Hành động nào sau đây giúp bảo vệ biển?", options: ["Không vứt túi nilon xuống biển", "Đổ dầu nhớt vào nước", "Hạ rừng ven biển", "Tạo ô nhiễm"], answer: 0 },
-  { question: "Đâu là dấu hiệu của một câu trả lời chính thống?", options: ["Có nguồn tin rõ ràng", "Không có tên tác giả", "Lời hứa quá tuyệt vời", "Lan truyền nhanh chóng"], answer: 0 },
-  { question: "Thứ tự nào đúng cho việc xử lý tin giả?", options: ["Kiểm chứng - không chia sẻ - báo tin đúng", "Chia sẻ ngay - kiểm chứng sau", "Phớt lờ tất cả", "Tin lời người khác"], answer: 0 },
-  { question: "Đâu không phải là nguồn tài nguyên của biển?", options: ["Cát thô trên đường cao tốc", "Cá tôm", "San hô", "Tài nguyên du lịch"], answer: 0 },
-  { question: "Loại rạn san hô nào phổ biến ở Trường Sa?", options: ["Rạn san hô lót", "Rạn đá sa thạch", "Rạn băng", "Rạn cát nội địa"], answer: 0 },
-  { question: "Biển Đông giúp Việt Nam kết nối với quốc gia nào?", options: ["Nhật Bản", "Ba Lan", "Argentina", "Ai Cập"], answer: 0 },
-  { question: "Đâu là trách nhiệm của tuổi trẻ với biển đảo?", options: ["Hiểu và truyền tải đúng sự thật", "Bỏ mặc vấn đề", "Nghe lời người khác mà không suy nghĩ", "Làm sai sự thật"], answer: 0 },
-  { question: "Những ai thường tuần tra bảo vệ chủ quyền biển đảo?", options: ["Hải quân và Cảnh sát biển", "Người làm du lịch", "Họa sĩ", "Thợ chụp ảnh"], answer: 0 },
-  { question: "Mục đích của việc tìm hiểu lịch sử Hoàng Sa là gì?", options: ["Khẳng định chủ quyền vững chắc", "Chỉ để giải trí", "Chỉ để làm bài tập", "Không cần học"], answer: 0 },
-  { question: "Đâu là biểu tượng cho lòng tự hào về biển đảo?", options: ["Cờ Tổ quốc tung bay trên đảo", "Áo phao du lịch", "Bến tàu chật ních", "Thuyền máy"], answer: 0 },
-  { question: "Thứ tự nào đúng để chơi quiz 100 câu?", options: ["Trộn câu và trộn đáp án", "Luôn giữ đúng thứ tự cũ", "Chỉ trộn đáp án", "Không trộn câu"], answer: 0 },
-  { question: "Hành động nào phản ánh bảo vệ chủ quyền trên mạng?", options: ["Chia sẻ nội dung chính xác", "Chia sẻ tin đồn", "Bỏ ngoài tai", "Nói xấu người khác"], answer: 0 },
-  { question: "Cách nào tốt nhất để học về Hoàng Sa?", options: ["Tìm hiểu sử sách và nguồn tin chính xác", "Tin lời đồn đại", "Chỉ xem phim", "Nghe ai đó nói"], answer: 0 },
-  { question: "Tài nguyên biển nào nên được bảo tồn?", options: ["San hô và nguồn cá", "Rác thải nhựa", "Nước đục", "Dầu thải"], answer: 0 },
-  { question: "Mục tiêu của việc tạo bảng xếp hạng quiz là gì?", options: ["Kích thích học và thi đua lành mạnh", "So sánh người với người", "Chỉ để khoe điểm", "Phá hoại niềm vui"], answer: 0 },
-  { question: "Trong quiz, điều gì được trộn ngẫu nhiên?", options: ["Thứ tự câu và thứ tự đáp án", "Chỉ thứ tự câu", "Chỉ thứ tự đáp án", "Không trộn gì"], answer: 0 },
-  { question: "Đâu là tiêu chuẩn của một câu hỏi tốt?", options: ["Rõ ràng và có đáp án chính xác", "Mơ hồ và khó hiểu", "Lặp lại nhiều lần", "Không liên quan"], answer: 0 },
-  { question: "Nên làm gì nếu câu hỏi khó?", options: ["Đọc kỹ và loại trừ đáp án sai", "Chọn tùy ý", "Bỏ qua", "Không trả lời"], answer: 0 },
-  { question: "Mục đích của việc trộn đáp án là gì?", options: ["Giảm khả năng ghi nhớ vị trí đáp án", "Làm khó cho người chơi", "Phá quiz", "Không có lý do"], answer: 0 },
-  { question: "Còn được gọi là 'đấu trường' biển đảo nhất?", options: ["Hoàng Sa và Trường Sa", "Núi Everest", "Đảo Phú Quốc", "Sông Mekong"], answer: 0 },
-  { question: "Loại hình lịch sử nào gắn với biển đảo?", options: ["Thủy quân và hải đội", "Võ sĩ đạo", "Chiến tranh xe tăng", "Bóng rổ"], answer: 0 },
-  { question: "Cách nào giúp trẻ em yêu biển đảo hơn?", options: ["Học qua câu chuyện và quiz", "Bỏ qua sách sử", "Chỉ xem phim", "Tập trung vào game"], answer: 0 },
-  { question: "Một thông điệp đúng về chủ quyền là gì?", options: ["Giữ gìn, tuyên truyền và hành động đúng", "Im lặng trước tin giả", "Tin lời đối thủ", "Bỏ mặc"], answer: 0 },
-  { question: "Đâu không phải là hành động giữ gìn môi trường biển?", options: ["Thả rác xuống biển", "Dọn dẹp bãi biển", "Giảm sử dụng nhựa", "Tuyên truyền đúng"], answer: 0 },
-  { question: "Ai có thể giúp chia sẻ thông tin đúng về biển đảo?", options: ["Mọi người dân và học sinh", "Chỉ người lớn tuổi", "Chỉ doanh nhân", "Chỉ vận động viên"], answer: 0 },
-  { question: "Đâu là công dụng của rạn san hô?", options: ["Bảo vệ bờ biển và tạo nơi sống cho biển", "Chỉ để ngắm", "Làm tắc đường", "Tạo sóng lớn"], answer: 0 },
-  { question: "Khi chơi quiz, bạn phải làm gì đầu tiên?", options: ["Nhập tên và bắt đầu", "Bỏ qua tên", "Chờ người khác", "Đọc nội quy"], answer: 0 },
-  { question: "Thứ tự câu hỏi trong quiz nên như thế nào?", options: ["Ngẫu nhiên để mỗi lần khác nhau", "Luôn cố định", "Cùng đề xuất với người khác", "Không cần trộn"], answer: 0 },
-  { question: "Trong các câu sau, câu nào là việc làm đúng?", options: ["Thực hiện hành động bảo vệ biển đảo", "Bỏ mặc tin giả", "Phá hoại san hô", "Lan truyền tin sai"], answer: 0 },
-  { question: "Ai đang gìn giữ biển đảo mỗi ngày?", options: ["Ngư dân và lực lượng biển", "Khách du lịch", "Thợ chụp ảnh", "Người bay dù"], answer: 0 },
-  { question: "Câu nào giúp thể hiện lòng yêu nước?", options: ["Hiểu đúng và chia sẻ đúng thông tin", "Chỉ nói trên mạng", "Tin vào mọi thông tin", "Phớt lờ lịch sử"], answer: 0 },
-  { question: "Biển đảo cần được bảo vệ vì điều gì?", options: ["Giá trị sinh học và chủ quyền quốc gia", "Không có lý do", "Chỉ để thẩm mỹ", "Chỉ cho người giàu"], answer: 0 },
-  { question: "Sự khác biệt giữa câu hỏi và đáp án qua quiz là gì?", options: ["Câu hỏi được trộn và đáp án được trộn", "Không có sự khác biệt", "Chỉ có đáp án giống nhau", "Câu hỏi bị ẩn"], answer: 0 },
-  { question: "Màu nào thường dùng để biểu thị biển?", options: ["Xanh dương", "Đỏ", "Vàng", "Đen"], answer: 0 },
-  { question: "Công việc nào sau đây không giúp bảo vệ biển đảo?", options: ["Xả rác xuống biển", "Thu gom rác", "Không sử dụng đồ nhựa một lần", "Kêu gọi bạn bè giữ gìn"], answer: 0 },
-  { question: "Khi lan truyền thông tin về biển đảo, bạn nên chọn gì?", options: ["Nguồn chính thống", "Tin đồn", "Lời đàm tiếu", "Bình luận vô căn cứ"], answer: 0 },
-  { question: "Nơi nào không nằm trong quần đảo Trường Sa?", options: ["Hòn Khoai", "Đảo Trường Sa Lớn", "Đảo An Bang", "Đảo Song Tử Tây"], answer: 0 },
-  { question: "Lực lượng nào thường xuất hiện ở Hoàng Sa?", options: ["Cảnh sát biển", "Công an giao thông", "Biệt đội cứu hỏa", "Bộ đội lái xe"], answer: 0 },
-  { question: "Công việc nào giúp bảo vệ thông tin về chủ quyền?", options: ["Kiểm chứng nguồn tin", "Phát tán tin giả", "Bóp méo sự thật", "Bỏ qua nguồn tin"], answer: 0 },
-  { question: "Từ nào không đúng khi nói về biển đảo?", options: ["Nội địa", "Chủ quyền", "Hải đảo", "Quần đảo"], answer: 0 },
-  { question: "Giá trị nào giúp biển đảo trở nên thiêng liêng?", options: ["Chủ quyền và lịch sử", "Thời tiết xấu", "Đường sá", "Thương mại"], answer: 0 },
-  { question: "Đâu là biểu hiện của môi trường biển khỏe?", options: ["Nước trong, cá nhiều", "Nước đục, mùi hôi", "Rác nổi đầy", "Khói bụi"], answer: 0 },
-  { question: "Trong giáo dục, biển đảo thường được giảng dạy như thế nào?", options: ["Nguồn sử, địa lý và chủ quyền", "Kinh tế thị trường", "Văn hóa pop", "Thể thao"], answer: 0 },
-  { question: "Câu nào không đúng về bảo tồn san hô?", options: ["Phá hoại san hô là tốt", "Giảm khai thác", "Giữ nước sạch", "Hạn chế du lịch xâm hại"], answer: 0 },
-  { question: "Nguồn tin nào đáng tin cậy nhất?", options: ["Báo chí chính thống", "MXH vô danh", "Tin đồn", "Lời truyền miệng"], answer: 0 },
-  { question: "Hành động nào giúp nâng cao ý thức về biển đảo?", options: ["Tổ chức học tập và chia sẻ đúng", "Phát tán tin sai", "Bỏ qua lịch sử", "Chỉ nói mà không hành động"], answer: 0 },
-  { question: "Thứ tự trả lời nào giúp bạn đạt điểm tốt nhất?", options: ["Đọc kỹ đề và loại trừ đáp án sai", "Chọn nhanh theo cảm tính", "Đánh dấu tùy ý", "Không cần đọc"], answer: 0 },
-  { question: "Mô tả nào đúng về quần đảo Trường Sa?", options: ["Gồm nhiều đảo, bãi đá và bãi ngầm", "Chỉ có một hòn đảo lớn", "Nằm trong đất liền", "Chỉ xuất hiện trên bản đồ cũ"], answer: 0 },
-  { question: "Hành vi nào sau đây đúng về ứng xử trên mạng?", options: ["Không chia sẻ tin sai", "Chia sẻ nhanh tin giả", "Chỉ bình luận tiêu cực", "Bóp méo thông tin"], answer: 0 }
+  // === NHÓM 1: LỊCH SỬ & XÁC LẬP CHỦ QUYỀN (Câu 1 - 25) ===
+  { question: "Hải đội nào được chính quyền chúa Nguyễn thành lập từ thế kỷ XVII để thực thi chủ quyền tại Hoàng Sa?", options: ["Hải đội Bắc Hải", "Hải đội Hoàng Sa", "Hải đội Trường Sa", "Thủy quân lục chiến"], answer: 1 },
+  { question: "Hải đội Hoàng Sa kiêm quản hải đội nào để thực thi nhiệm vụ tại các đảo phía Nam và Côn Đảo?", options: ["Hải đội Trường Sa", "Hải đội Nam Hải", "Hải đội Bắc Hải", "Hải đội Tây Sa"], answer: 2 },
+  { question: "Nhiệm vụ chính của đội Hoàng Sa dưới triều chúa Nguyễn là gì?", options: ["Thu lượm hàng hóa tàu đắm, đánh bắt hải sản quý và đo đạc lộ trình đường biển", "Chỉ đánh bắt cá gần bờ", "Chuyển chở hàng hóa giao thương quốc tế", "Xây dựng các căn cứ quân sự kiên cố"], answer: 0 },
+  { question: "Tài liệu cổ nào của Đỗ Bá lập năm 1686 đã mô tả về 'Bãi Cát Vàng' thuộc phủ Quảng Ngãi?", options: ["Hồng Đức bản đồ", "Toản tập Thiên nam tứ chí lộ đồ thư", "Đại Nam nhất thống toàn đồ", "Phủ biên tạp lục"], answer: 1 },
+  { question: "Nhà bác học Lê Quý Đôn đã ghi chép rất chi tiết về tổ chức và hoạt động của đội Hoàng Sa trong cuốn sách nào năm 1776?", options: ["Lịch triều hiến chương loại chí", "Phủ biên tạp lục", "Đại Việt sử ký toàn thư", "Gia Định thành thông chí"], answer: 1 },
+  { question: "Dưới triều Nguyễn, vị vua nào đã cho khắc hình ảnh thuyền mảng và biển đảo Việt Nam lên Cửu Đỉnh?", options: ["Vua Gia Long", "Vua Minh Mạng", "Vua Thiệu Trị", "Vua Tự Đức"], answer: 1 },
+  { question: "Vua Minh Mạng đã ra lệnh cho lực lượng nào chủ trì việc cắm mốc chủ quyền và dựng bia đá tại Hoàng Sa năm 1835?", options: ["Suất đội Phạm Văn Nguyên cùng thủy quân và dân phu", "Hải đội Bắc Hải", "Thương nhân nước ngoài", "Các nhà truyền giáo phương Tây"], answer: 0 },
+  { question: "Cuốn chính sử nào của triều Nguyễn ghi lại việc vua Gia Long sai thủy quân ra Hoàng Sa đo đạc hải trình năm 1815?", options: ["Đại Nam thực lục", "Khâm định Việt sử thông giám cương mục", "Đại Nam liệt truyện", "Minh Mạng chính yếu"], answer: 0 },
+  { question: "Tập bản đồ nào do triều Nguyễn ấn hành năm 1838 có vẽ hình dáng bờ biển và ghi rõ 'Hoàng Sa', 'Trường Sa' thuộc lãnh thổ Việt Nam?", options: ["Đại Nam nhất thống toàn đồ", "Thiên hạ bản đồ", "An Nam hình thắng đồ", "Giáp Ngọ niên bình Nam đồ"], answer: 0 },
+  { question: "Địa danh 'Bãi Cát Vàng' được người Việt xưa dùng để chỉ khu vực nào ngày nay?", options: ["Quần đảo Hoàng Sa", "Quần đảo Trường Sa", "Đảo Phú Quốc", "Vịnh Bắc Bộ"], answer: 0 },
+  { question: "Châu bản triều Nguyễn là loại hình văn bản gì khẳng định chủ quyền của Việt Nam đối với hai quần đảo?", options: ["Văn bản hành chính của hoàng đế phê duyệt bằng mực đỏ", "Sách địa lý của tư nhân", "Nhật ký của các thủy thủ", "Bản đồ thương mại phương Tây"], answer: 0 },
+  { question: "Năm 1933, Phái đoàn Ngoại giao quốc gia nào đã thay mặt Việt Nam tuyên bố quản lý và sáp nhập các đảo Trường Sa vào tỉnh Bà Rịa?", options: ["Chính phủ bảo hộ Pháp", "Chính quyền nhà Thanh", "Quân đội Anh", "Đế quốc Nhật Bản"], answer: 0 },
+  { question: "Năm 1951, tại Hội nghị Hòa bình San Francisco, phái đoàn quốc gia nào đã tuyên bố khẳng định chủ quyền Hoàng Sa, Trường Sa mà không gặp sự phản đối?", options: ["Phái đoàn quốc gia Việt Nam do Trần Văn Hữu làm trưởng đoàn", "Phái đoàn Hoa Kỳ", "Phái đoàn Liên Xô", "Phái đoàn Pháp"], answer: 0 },
+  { question: "Chính quyền Việt Nam Cộng hòa đã ban hành sắc lệnh sáp nhập quần đảo Hoàng Sa vào tỉnh nào năm 1961?", options: ["Tỉnh Thừa Thiên", "Tỉnh Quảng Nam", "Tỉnh Quảng Ngãi", "Tỉnh Khánh Hòa"], answer: 1 },
+  { question: "Lực lượng Hải quân miền Bắc đã tiến hành giải phóng hoàn toàn các đảo thuộc quần đảo Trường Sa do đối phương đồn trú vào thời gian nào?", options: ["Tháng 4 năm 1975", "Tháng 5 năm 1975", "Tháng 12 năm 1975", "Tháng 1 năm 1974"], answer: 0 },
+  { question: "Ngày giải phóng hòn đảo đầu tiên (đảo Song Tử Tây) tại quần đảo Trường Sa là ngày nào?", options: ["14/04/1975", "25/04/1975", "30/04/1975", "19/05/1975"], answer: 0 },
+  { question: "Ai là người chỉ huy lực lượng hải quân giải phóng quần đảo Trường Sa vào tháng 4/1975?", options: ["Đồng chí Mai Năng", "Đồng chí Nguyễn Chánh", "Đồng chí Lê Trọng Tấn", "Đồng chí Trần Văn Trà"], answer: 0 },
+  { question: "Sự kiện lịch sử nào diễn ra ngày 19/01/1974 tại quần đảo Hoàng Sa?", options: ["Trận hải chiến bảo vệ Hoàng Sa của Hải quân Việt Nam Cộng hòa chống quân xâm lược", "Lễ cắm mốc của triều Nguyễn", "Pháp bàn giao quần đảo cho Việt Nam", "Xây dựng ngọn hải đăng đầu tiên"], answer: 0 },
+  { question: "Sách cổ 'Việt sử xứ Đàng Trong' và văn bản của dòng họ nào ở Lý Sơn ghi nhận việc đi lính Hoàng Sa?", options: ["Dòng họ Đặng và dòng họ Võ", "Dòng họ Nguyễn", "Dòng họ Lê", "Dòng họ Trần"], answer: 0 },
+  { question: "Cai đội Hoàng Sa nổi tiếng nào dưới triều Nguyễn đã được lập miếu thờ và vinh danh tại đảo Lý Sơn?", options: ["Cai đội Phạm Hữu Nhật", "Cai đội Phạm Văn Nguyên", "Cai đội Thuyên Đức Hầu", "Cai đội Võ Văn Hùng"], answer: 0 },
+  { question: "Nghề 'mộ phu' đi lính Hoàng Sa ngày xưa thường xuất phát chủ yếu từ vùng đất nào?", options: ["Huyện đảo Lý Sơn, tỉnh Quảng Ngãi", "Huyện đảo Côn Đảo", "Thành phố Đà Nẵng", "Tỉnh Khánh Hòa"], answer: 0 },
+  { question: "Nghi lễ tâm linh thiêng liêng nào được tổ chức hàng năm ở Lý Sơn để tri ân những người lính Hoàng Sa?", options: ["Lễ khao lề thế lính Hoàng Sa", "Lễ hội Đua thuyền", "Lễ hội Cầu ngư", "Lễ hội Nghinh Ông"], answer: 0 },
+  { question: "Ý nghĩa của những chiếc 'thuyền nan và ngôi mộ gió' trong lễ khao lề thế lính Hoàng Sa là gì?", options: ["Tế sống và làm mộ giả cho người đi biển biết trước có thể không trở về", "Để trang trí lễ hội", "Dùng để đua thuyền giữa các dòng họ", "Thờ cúng thần biển"], answer: 0 },
+  { question: "Văn bản hành chính nào của phương Tây thế kỷ XVII-XVIII thường gọi quần đảo Hoàng Sa bằng cái tên gì?", options: ["Paracels", "Spratlys", "Formosa", "Indochina"], answer: 0 },
+  { question: "Tài liệu 'Bản đồ hàng hải phương Tây' vẽ khu vực Biển Đông thường ghi nhận Hoàng Sa thuộc quyền kiểm soát của vương quốc nào?", options: ["An Nam (Việt Nam)", "Siam (Thái Lan)", "Champa", "Cochinchine độc lập"], answer: 0 },
+
+  // === NHÓM 2: ĐỊA LÝ & HỆ SINH THÁI BIỂN (Câu 26 - 50) ===
+  { question: "Quần đảo Hoàng Sa hiện nay thuộc quyền quản lý hành chính của đơn vị nào?", options: ["Huyện Hoàng Sa, Thành phố Đà Nẵng", "Huyện Trường Sa, Tỉnh Khánh Hòa", "Huyện Lý Sơn, Tỉnh Quảng Ngãi", "Huyện Phú Quý, Tỉnh Bình Thuận"], answer: 0 },
+  { question: "Quần đảo Trường Sa nằm ở phía Nam Biển Đông hiện thuộc quyền quản lý hành chính của tỉnh nào?", options: ["Tỉnh Khánh Hòa (Huyện Trường Sa)", "Thành phố Đà Nẵng", "Tỉnh Bà Rịa - Vũng Tàu", "Tỉnh Bình Thuận"], answer: 0 },
+  { question: "Quần đảo Hoàng Sa gồm bao gồm hai nhóm đảo chính nào?", options: ["Nhóm Lưỡi Liềm và nhóm An Vĩnh", "Nhóm Song Tử và nhóm Sinh Tồn", "Nhóm Thị Tứ và nhóm Nam Yết", "Nhóm đảo Bình Nguyên và nhóm Trấn Biên"], answer: 0 },
+  { question: "Đảo nào có diện tích tự nhiên lớn nhất thuộc quần đảo Hoàng Sa?", options: ["Đảo Phú Lâm", "Đảo Linh Côn", "Đảo Quang Hòa", "Đảo Hoàng Sa"], answer: 0 },
+  { question: "Đảo nổi có diện tích lớn nhất thuộc quần đảo Trường Sa do Việt Nam quản lý thực tế là đảo nào?", options: ["Đảo Trường Sa Lớn", "Đảo Nam Yết", "Đảo Song Tử Tây", "Đảo Sinh Tồn"], answer: 2 },
+  { question: "Địa hình chủ yếu cấu tạo nên các thực thể ở quần đảo Hoàng Sa và Trường Sa là gì?", options: ["Đảo san hô, rạn san hô, bãi cạn và bãi ngầm", "Đảo đá vôi lục địa", "Đảo đá sa thạch kết tinh", "Hệ thống núi lửa đất sét"], answer: 0 },
+  { question: "Khí hậu tại hai quần đảo Hoàng Sa và Trường Sa mang đặc điểm gì?", options: ["Khí hậu nhiệt đới gió mùa đại dương, thường xuyên có bão lớn", "Khí hậu ôn đới hải dương", "Khí hậu cận nhiệt đới khô hạn", "Khí hậu xích đạo không có gió mùa"], answer: 0 },
+  { question: "Loài chim biển nào được mệnh danh là biểu tượng và có số lượng cư trú đông đảo tại quần đảo Hoàng Sa?", options: ["Chim Hải âu", "Chim Nhạn biển (Chim điên)", "Chim Bồ câu biển", "Chim Cắt biển"], answer: 1 },
+  { question: "Loài cây có khả năng chịu mặn, chắn bão gió tốt và là biểu tượng của Trường Sa là cây gì?", options: ["Cây phong ba và cây bàng vuông", "Cây đước và cây vẹt", "Cây thông và cây sồi", "Cây phi lao và cây dừa"], answer: 0 },
+  { question: "Hệ sinh thái biển xung quanh hai quần đảo có đặc điểm nổi bật nào về mặt sinh học?", options: ["Độ đa dạng sinh học rất cao với hàng ngàn loài cá và san hô", "Nghèo nàn sinh vật do nước biển quá mặn", "Chỉ có các loài tảo nước sâu", "Không có hệ sinh thái rạn san hô"], answer: 0 },
+  { question: "Hiện tượng tự nhiên nào tạo nên cấu trúc vòng tròn đặc trưng của các rạn san hô giữa đại dương?", options: ["Atoll (Đảo san hô vòng)", "Vịnh biển kín", "Rạn bờ biển thẳng", "Bãi bồi phù sa"], answer: 0 },
+  { question: "Nguồn nước ngọt sinh hoạt chính trên các đảo nổi tự nhiên ở Trường Sa trước khi có máy lọc nước là từ đâu?", options: ["Nước mưa tích trữ và các giếng nước ngầm lợ được lọc qua rạn san hô", "Dẫn đường ống từ đất liền ra", "Chở hoàn toàn từ đất liền bằng tàu", "Khai thác từ các hồ nước mặn"], answer: 0 },
+  { question: "Khoảng cách từ đất liền Việt Nam đến quần đảo Hoàng Sa gần hơn hay xa hơn so với các nước xung quanh Biển Đông?", options: ["Gần hơn rất nhiều, khẳng định tính liên tục về địa lý", "Xa hơn các quốc gia khác", "Bằng khoảng cách từ các nước khác", "Nằm hoàn toàn tách biệt ngoài đại dương"], answer: 0 },
+  { question: "Vùng biển Hoàng Sa và Trường Sa có ngư trường đánh bắt hải sản mang tầm quan trọng như thế nào đối với ngư dân miền Trung?", options: ["Là ngư trường truyền thống, sinh kế lâu đời của hàng vạn hộ ngư dân", "Khu vực cấm đánh bắt hoàn toàn", "Ngư trường mới phát hiện gần đây", "Chỉ có giá trị khai thác thủy sản nước ngọt"], answer: 0 },
+  { question: "Loại san hô nào chiếm tỷ lệ lớn nhất tạo nên cấu trúc rạn tại quần đảo Trường Sa?", options: ["San hô khối và san hô cành (san hô cứng)", "San hô mềm dẻo", "San hô đen quý hiếm", "San hô sừng hươu nước ngọt"], answer: 0 },
+  { question: "Đảo Song Tử Tây thuộc quần đảo Trường Sa nổi tiếng với công trình dân sự, năng lượng xanh nào?", options: ["Hệ thống điện gió và điện mặt trời quy mô lớn", "Nhà máy nhiệt điện than", "Trạm thủy điện thủy triều", "Nhà máy điện hạt nhân"], answer: 0 },
+  { question: "Ngọn hải đăng trên các đảo ở Trường Sa có vai trò gì đối với an toàn hàng hải quốc tế?", options: ["Định hướng, dẫn đường và bảo đảm an toàn cho tàu thuyền qua lại Biển Đông", "Chỉ thắp sáng phục vụ quân đội", "Làm cột mốc trang trí cảnh quan", "Phát tín hiệu dự báo thời tiết đất liền"], answer: 0 },
+  { question: "Đảo Sinh Tồn Đông thuộc cụm đảo nào của quần đảo Trường Sa?", options: ["Cụm Sinh Tồn", "Cụm Song Tử", "Cụm Nam Yết", "Cụm Trường Sa"], answer: 0 },
+  { question: "Đảo An Bang thuộc quần đảo Trường Sa có đặc điểm địa lý tự nhiên độc đáo nào?", options: ["Bãi cát xung quanh đảo thường xuyên thay đổi hình dáng theo mùa gió", "Là đảo đá cao nhất", "Có hồ nước ngọt khổng lồ giữa đảo", "Không bao giờ có sóng lớn"], answer: 0 },
+  { question: "Hệ sinh thái thảm cỏ biển xung quanh các đảo có tác dụng chính là gì?", options: ["Là nơi cư trú, sinh sản của các loài thủy sản và rùa biển quý hiếm", "Làm thức ăn gia súc trên đất liền", "Làm sạch mặt nước bằng hóa chất", "Ngăn chặn hoàn toàn hiện tượng sạt lở bờ biển"], answer: 0 },
+  { question: "Đảo Nam Yết thuộc quần đảo Trường Sa được quy hoạch bảo tồn sinh học quốc gia vì có loài thực vật nào phát triển mạnh?", options: ["Cây bàng vuông cổ thụ và thảm thực vật biển đặc trưng", "Cây công nghiệp thân gỗ lớn", "Cây lúa nước chịu mặn", "Cây rừng ngập mặn đước đôi"], answer: 0 },
+  { question: "Bãi đá ngầm Gạc Ma thuộc quần đảo nào của Việt Nam?", options: ["Quần đảo Trường Sa", "Quần đảo Hoàng Sa", "Quần đảo Thổ Chu", "Quần đảo Cô Tô"], answer: 0 },
+  { question: "Vị trí địa lý của Biển Đông nói chung và hai quần đảo nói riêng nằm trên tuyến đường hàng hải kết nối hai đại dương nào?", options: ["Ấn Độ Dương và Thái Bình Dương", "Đại Tây Dương và Ấn Độ Dương", "Thái Bình Dương và Bắc Băng Dương", "Bắc Băng Dương và Đại Tây Dương"], answer: 0 },
+  { question: "Hiện tượng xâm nhập mặn và bão biển tại các đảo được các chiến sĩ khắc phục bằng cách nào để trồng rau xanh?", options: ["Trồng rau trong khay, che chắn sóng gió bằng vách tre/nilon và tiết kiệm nước ngọt", "Nhập khẩu rau hoàn toàn từ nước ngoài", "Trồng rau trực tiếp trên bãi cát san hô không cần che chắn", "Sử dụng nước biển để tưới cây"], answer: 0 },
+  { question: "Đảo đá nào thuộc quần đảo Hoàng Sa là nơi đặt ngọn hải đăng lâu đời do Pháp xây dựng?", options: ["Đảo Pattle (Hoàng Sa)", "Đảo Phú Lâm", "Đảo Linh Côn", "Đảo Tri Tôn"], answer: 0 },
+
+  // === NHÓM 3: PHÁP LÝ QUỐC TẾ & KINH TẾ BIỂN (Câu 51 - 75) ===
+  { question: "Công ước của Liên Hợp Quốc về Luật Biển năm 1982 được ký kết tại đâu và viết tắt là gì?", options: ["UNCLOS 1982 tại Jamaica", "WTO 1995 tại Geneva", "DOC 2002 tại Campuchia", "UNESCO 1945 tại Anh"], answer: 0 },
+  { question: "Theo UNCLOS 1982, Lãnh hải của một quốc gia ven biển có chiều rộng bao nhiêu hải lý tính từ đường cơ sở?", options: ["12 hải lý", "24 hải lý", "200 hải lý", "350 hải lý"], answer: 0 },
+  { question: "Vùng biển nằm tiếp liền và bên ngoài lãnh hải, nơi quốc gia kiểm soát thuế quan, y tế, di cư gọi là gì?", options: ["Vùng tiếp giáp lãnh hải (24 hải lý tính từ đường cơ sở)", "Vùng đặc quyền kinh tế", "Thềm lục địa", "Nội thủy"], answer: 0 },
+  { question: "Vùng đặc quyền kinh tế (EEZ) theo quy định của UNCLOS 1982 có chiều rộng tối đa là bao nhiêu?", options: ["200 hải lý tính từ đường cơ sở", "12 hải lý", "100 hải lý", "500 hải lý"], answer: 0 },
+  { question: "Tại vùng đặc quyền kinh tế, quốc gia ven biển có quyền gì?", options: ["Quyền chủ quyền về kinh tế (khai thác tài nguyên, đặt ống dẫn) và quyền tài phán", "Chủ quyền hoàn toàn tuyệt đối như đất liền", "Không có quyền gì cả", "Quyền ngăn cấm tuyệt đối tàu thuyền nước ngoài đi qua"], answer: 0 },
+  { question: "Nước ta đã thông qua bộ luật cốt lõi nào năm 2012 để khẳng định và quản lý các vùng biển quốc gia?", options: ["Luật Biển Việt Nam", "Luật Hàng hải quốc tế", "Luật Biên giới lãnh thổ", "Luật Thủy sản sửa đổi"], answer: 0 },
+  { question: "Tuyên bố về ứng xử của các bên ở Biển Đông (DOC) được ký kết giữa ASEAN và Trung Quốc vào năm nào?", options: ["Năm 2002", "Năm 1995", "Năm 2010", "Năm 1982"], answer: 0 },
+  { question: "Mục tiêu cốt lõi hiện nay của Việt Nam và ASEAN đang đàm phán với Trung Quốc để tiến tới một văn bản pháp lý ràng buộc hơn DOC là gì?", options: ["Bộ Quy tắc ứng xử ở Biển Đông (COC)", "Hiệp ước biên giới mới", "Thỏa thuận thương mại tự do", "Công ước luật biển riêng"], answer: 0 },
+  { question: "Nguyên tắc cơ bản nhất của Việt Nam trong việc giải quyết các tranh chấp ở Biển Đông là gì?", options: ["Giải quyết hòa bình trên cơ sở luật pháp quốc tế, đặc biệt là UNCLOS 1982", "Sử dụng vũ lực quân sự lập tức", "Nhượng bộ hoàn toàn lãnh thổ", "Không đối thoại, đóng cửa biên giới biển"], answer: 0 },
+  { question: "Tài nguyên 'Băng cháy' (Gas Hydrate) được phát hiện có trữ lượng lớn ở khu vực nào thuộc thềm lục địa Việt Nam?", options: ["Khu vực biển sâu Biển Đông bao gồm thềm lục địa quanh quần đảo", "Các con sông lớn ở đồng bằng", "Dưới lòng đất liền các tỉnh miền núi", "Các vùng đầm phá nước lợ"], answer: 0 },
+  { question: "Các giàn khoan dầu khí của Việt Nam (như Bạch Hổ, Đại Hùng) nằm ở khu vực địa lý nào?", options: ["Thềm lục địa phía Nam Việt Nam", "Hoàn toàn trên đất liền", "Trong lòng vịnh Thái Lan sát bờ", "Ngoài khơi Thái Bình Dương"], answer: 0 },
+  { question: "Nền kinh tế biển đóng góp vai trò chiến lược gì trong mục tiêu phát triển bền vững của nước ta?", options: ["Trở thành quốc gia biển giàu mạnh, phát triển các ngành hàng hải, thủy sản, dầu khí và du lịch biển", "Chỉ tập trung vào xuất khẩu muối", "Thay thế hoàn toàn kinh tế nông nghiệp đất liền", "Hạn chế mở rộng giao thương hàng hải"], answer: 0 },
+  { question: "Vùng nội thủy của quốc gia được xác định như thế nào?", options: ["Vùng nước nằm phía trong của đường cơ sở", "Vùng nước nằm ngoài lãnh hải", "Vùng biển rộng 200 hải lý", "Vùng thềm lục địa kéo dài"], answer: 0 },
+  { question: "Đường cơ sở dùng để tính chiều rộng lãnh hải của lục địa Việt Nam được tuyên bố vào năm nào?", options: ["Năm 1982", "Năm 1975", "Năm 1992", "Năm 2012"], answer: 0 },
+  { question: "Một hải lý (dặm biển) quy đổi ra hệ mét có chiều dài bằng bao nhiêu?", options: ["1.852 mét", "1.000 mét", "2.000 mét", "1.500 mét"], answer: 0 },
+  { question: "Việt Nam có quyền gì đối với vùng Thềm lục địa của mình theo UNCLOS 1982?", options: ["Quyền chủ quyền đối với việc thăm dò và khai thác tài nguyên thiên nhiên ở đáy biển và lòng đất dưới đáy biển", "Quyền sở hữu bầu trời phía trên thềm lục địa", "Quyền cấm tất cả các cáp treo ngầm quốc tế đi qua", "Không có quyền kiểm soát tài nguyên lòng đất"], answer: 0 },
+  { question: "Hiệp định phân định Vịnh Bắc Bộ được Việt Nam ký kết thành công với Trung Quốc vào năm nào?", options: ["Năm 2000", "Năm 1995", "Năm 2004", "Năm 1982"], answer: 0 },
+  { question: "Việt Nam đã ký kết Hiệp định phân định vùng đặc quyền kinh tế trên biển với quốc gia Đông Nam Á nào vào năm 2022?", options: ["Indonesia", "Malaysia", "Philippines", "Thái Lan"], answer: 0 },
+  { question: "Lực lượng chức năng nào có quyền xử phạt các tàu thuyền nước ngoài vi phạm chủ quyền kinh tế và đánh bắt trộm trong vùng EEZ của Việt Nam?", options: ["Cảnh sát biển và Kiểm ngư Việt Nam", "Cảnh sát giao thông đường bộ", "Lực lượng dân quân tự vệ xã", "Cục biên phòng đất liền"], answer: 0 },
+  { question: "Các nhà giàn DK1 được Việt Nam xây dựng tại khu vực nào?", options: ["Các bãi ngầm trên thềm lục địa phía Nam", "Ngay sát bờ biển Vũng Tàu", "Giữa trung tâm quần đảo Hoàng Sa", "Trên đất liền các tỉnh duyên hải"], answer: 0 },
+  { question: "Nhà giàn DK1 đầu tiên được dựng lên vững chãi trên biển vào năm nào?", options: ["Năm 1989", "Năm 1975", "Năm 2000", "Năm 1995"], answer: 0 },
+  { question: "Tên gọi đầy đủ của các nhà giàn DK1 là gì?", options: ["Cụm Dịch vụ - Kinh tế - Kỹ thuật", "Trạm Khảo sát Quân sự đường biển", "Đồn Biên phòng biển khơi", "Nhà văn hóa biển đảo"], answer: 0 },
+  { question: "Mục đích chiến lược của hệ thống nhà giàn DK1 là gì?", options: ["Bảo vệ thềm lục địa, làm chỗ dựa cho ngư dân bám biển và nghiên cứu khoa học biển", "Phục vụ khách du lịch nghỉ dưỡng cao cấp", "Làm cảng trung chuyển hàng hóa quốc tế", "Khai thác quặng sắt dưới đáy biển"], answer: 0 },
+  { question: "Chiến dịch mang tên 'Hành trình Tuổi trẻ vì biển đảo quê hương' do tổ chức nào phát động hàng năm?", options: ["Trung ương Đoàn TNCS Hồ Chí Minh", "Bộ Giáo dục và Đào tạo", "Bộ Văn hóa, Thể thao và Du lịch", "Hội khuyến học Việt Nam"], answer: 0 },
+  { question: "Luật Biển Việt Nam năm 2012 quy định quần đảo Hoàng Sa và Trường Sa thuộc vùng biển nào của Việt Nam?", options: ["Thuộc phạm vi chủ quyền và lãnh thổ không thể tách rời của nước Cộng hòa xã hội chủ nghĩa Việt Nam", "Là vùng biển quốc tế tự do hoàn toàn", "Là vùng biển tranh chấp không thuộc ai", "Là khu vực kinh tế hợp tác tạm thời"], answer: 0 },
+
+  // === NHÓM 4: TRÁCH NHIỆM HỌC SINH & TUYÊN TRUYỀN (Câu 76 - 100) ===
+  { question: "Khi thấy thông tin sai lệch về chủ quyền biển đảo trên mạng xã hội, học sinh cần làm gì?", options: ["Báo cáo vi phạm, không chia sẻ và sử dụng tư liệu chính thống để phản bác", "Chia sẻ ngay để mọi người vào tranh cãi", "Bình luận bằng những lời lẽ thô tục", "Bỏ qua không quan tâm"], answer: 0 },
+  { question: "Hành động nào thể hiện lòng yêu nước và ý thức bảo vệ biển đảo đúng đắn của học sinh?", options: ["Tích cực học tập lịch sử địa lý, lan tỏa thông tin đúng sự thật và tham gia các cuộc thi tìm hiểu biển đảo", "Kích động bạo lực trên không gian mạng", "Chỉ quan tâm đến biển đảo khi có bài kiểm tra", "Nghe theo các nguồn tin chưa kiểm chứng trên mạng"], answer: 0 },
+  { question: "Trang web chính thống của cơ quan nào cung cấp thông tin chuẩn xác nhất về biên giới lãnh thổ Việt Nam?", options: ["Ủy ban Biên giới quốc gia - Bộ Ngoại giao Việt Nam", "Các trang blog cá nhân tự phát", "Các diễn đàn trò chơi trực tuyến", "Các hội nhóm giải trí trên mạng xã hội"], answer: 0 },
+  { question: "Học sinh có thể đóng góp gì cho chiến dịch 'Trường Sa xanh'?", options: ["Lan tỏa thông điệp tiết kiệm nước, bảo vệ môi trường và quyên góp cây xanh gửi tặng chiến sĩ", "Gửi đồ nhựa dùng một lần ra đảo", "Viết bài chê bai môi trường biển", "Không làm gì vì khoảng cách quá xa"], answer: 0 },
+  { question: "Khẩu hiệu hành động ý nghĩa khẳng định tinh thần của thế hệ trẻ với biển đảo Tổ quốc là gì?", options: ["Cả nước vì Trường Sa, Trường Sa vì cả nước", "Trường Sa là nơi du lịch giải trí", "Biển đảo là tài nguyên khai thác vô tận", "Chỉ bảo vệ đất liền phía trong bờ"], answer: 0 },
+  { question: "Hành động của du khách nhặt san hô sống mang về đất liền làm kỷ niệm tác hại như thế nào?", options: ["Tàn phá rạn san hô, làm hủy hoại hệ sinh thái và môi trường sống của sinh vật biển", "Giúp san hô phát triển nhanh hơn", "Làm đẹp cho đất liền", "Không gây ảnh hưởng gì"], answer: 0 },
+  { question: "Lực lượng nòng cốt bảo vệ vững chắc chủ quyền không gian biển, hải đảo và thềm lục địa là lực lượng nào?", options: ["Hải quân Nhân dân Việt Nam", "Lực lượng Cảnh sát giao thông", "Lực lượng Kiểm lâm", "Lực lượng Dân quân tự vệ đất liền"], answer: 0 },
+  { question: "Ngày truyền thống của Lực lượng Hải quân Nhân dân Việt Nam là ngày nào?", options: ["Ngày 7 tháng 5 năm 1955", "Ngày 22 tháng 12 năm 1944", "Ngày 19 tháng 8 năm 1945", "Ngày 30 tháng 4 năm 1975"], answer: 0 },
+  { question: "Công trình tâm linh, văn hóa ý nghĩa nào đã được xây dựng và tôn tạo khang trang trên các đảo nổi ở Trường Sa?", options: ["Các ngôi chùa Việt và đài tưởng niệm các anh hùng liệt sĩ", "Các công viên giải trí cảm giác mạnh", "Các nhà máy công nghiệp lớn", "Sân vận động thể thao quốc tế"], answer: 0 },
+  { question: "Người dân định cư sinh sống tại các xã đảo thuộc huyện Trường Sa đóng vai trò gì?", options: ["Là những cột mốc sống khẳng định chủ quyền, phát triển kinh tế xã hội biển đảo", "Chỉ ra đảo sinh sống tạm thời vào mùa hè", "Làm nhiệm vụ đánh bắt cá thuê cho nước ngoài", "Không có vai trò gì về chủ quyền"], answer: 0 },
+  { question: "Trường học trên các đảo như Trường Sa Lớn, Sinh Tồn phục vụ cho đối tượng nào?", options: ["Con em của các hộ dân sinh sống trên đảo", "Chỉ dành cho các chiến sĩ học tập", "Phục vụ học sinh từ đất liền ra du học", "Không có học sinh học tập"], answer: 0 },
+  { question: "Hành động xả rác thải nhựa xuống biển gây hậu quả nghiêm trọng gì?", options: ["Làm ô nhiễm nguồn nước, các loài sinh vật biển ăn phải dẫn đến tử vong", "Giúp biển sạch hơn", "Làm tăng lượng hải sản đánh bắt", "Nhựa tự phân hủy ngay trong nước biển"], answer: 0 },
+  { question: "Tại sao nói mỗi học sinh trên không gian mạng cần là một 'đại sứ tuyên truyền' biển đảo?", options: ["Vì học sinh có thể dùng sức trẻ và công nghệ để lan tỏa tri thức đúng đắn đến bạn bè quốc tế", "Để tăng lượt theo dõi và bán hàng trực tuyến", "Để thay thế công việc của các cơ quan ngoại giao", "Để tranh cãi với người nước ngoài"], answer: 0 },
+  { question: "Bài thơ nổi tiếng nào của Lý Thường Kiệt được coi là bản Tuyên ngôn Độc lập đầu tiên khẳng định chủ quyền lãnh thổ?", options: ["Nam quốc sơn hà", "Bình Ngô đại cáo", "Hịch tướng sĩ", "Tuyên ngôn Độc lập"], answer: 0 },
+  { question: "Cột mốc chủ quyền trên các đảo ở Trường Sa thường khắc những thông tin cốt lõi nào?", options: ["Tên quốc gia, tên đảo, kinh độ và vĩ độ địa lý chính xác", "Tên của người xây dựng cột mốc", "Danh sách các loại hải sản trên đảo", "Bản đồ toàn thế giới"], answer: 0 },
+  { question: "Việc gửi những bức thư, cánh thiệp chúc Tết ra Trường Sa vào dịp cuối năm có ý nghĩa gì?", options: ["Cổ vũ tinh thần, mang hơi ấm đất liền sưởi ấm ý chí các chiến sĩ nơi đầu sóng ngọn gió", "Là thủ tục bắt buộc hàng năm", "Để kiểm tra hệ thống bưu điện biển đảo", "Để gửi quà tặng thương mại"], answer: 0 },
+  { question: "Bài hát nổi tiếng 'Gần lắm Trường Sa' của nhạc sĩ Hình Phước Long thể hiện tình cảm gì?", options: ["Tình cảm gắn kết khăng khít, không khoảng cách giữa đất liền và đảo xa", "Ca ngợi vẻ đẹp của vùng núi cao", "Miêu tả cuộc sống của người nông dân", "Lời tạm biệt bãi biển du lịch"], answer: 0 },
+  { question: "Tổ chức nào quản lý và vận hành các ngọn hải đăng tại quần đảo Trường Sa?", options: ["Tổng công ty Bảo đảm an toàn hàng hải miền Nam", "Cục Hàng không dân dụng Việt Nam", "Các công ty du lịch tư nhân", "Chính quyền địa phương đất liền cấp xã"], answer: 0 },
+  { question: "Quốc gia ven biển có nghĩa vụ gì đối với các tàu thuyền bị gặp nạn trên vùng biển quản lý của mình?", options: ["Kịp thời cứu hộ, cứu nạn, nhân đạo không phân biệt quốc tịch tàu", "Thu phí cứu hộ thật cao mới cứu", "Bỏ mặc không can thiệp", "Tịch thu toàn bộ tài sản trên tàu"], answer: 0 },
+  { question: "Các chiến sĩ hải quân trên đảo ngoài nhiệm vụ huấn luyện còn giúp đỡ ngư dân những việc gì?", options: ["Cung cấp nước ngọt, hỗ trợ y tế cấp cứu và làm nơi tránh trú bão an toàn", "Thuê ngư dân đánh cá cho quân đội", "Bán nhu yếu phẩm lấy lời cao", "Kiểm tra và thu giữ cá của ngư dân"], answer: 0 },
+  { question: "Triển lãm bản đồ và trưng bày tư liệu 'Hoàng Sa, Trường Sa của Việt Nam - Những bằng chứng lịch sử và pháp lý' có mục đích gì?", options: ["Minh bạch thông tin, giáo dục truyền thống yêu nước và khẳng định bằng chứng đanh thép với quốc tế", "Để bán vé thu tiền quảng cáo", "Để trưng bày nghệ thuật hội họa đơn thuần", "Chỉ tổ chức dành riêng cho các nhà khoa học"], answer: 0 },
+  { question: "Khi nghe các thông tin xuyên tạc về biên giới biển đảo từ các nguồn không chính thống, thái độ đúng đắn là gì?", options: ["Cảnh giác, tuyệt đối không tin theo, không bình luận kích động và báo cáo tài khoản xấu", "Tin theo và chia sẻ cho bạn bè cùng biết", "Lập nhóm tranh cãi gay gắt bạo lực", "Tán thành ý kiến đó"], answer: 0 },
+  { question: "Ngày Đại dương Thế giới được tổ chức hàng năm vào ngày nào nhằm nâng cao ý thức bảo vệ biển?", options: ["Ngày 8 tháng 6", "Chủ nhật đầu tiên của tháng 5", "Ngày 2 tháng 9", "Ngày 1 tháng 1"], answer: 0 },
+  { question: "Học sinh có thể tìm đọc các bài viết phân tích sâu sắc về pháp lý Biển Đông trên tạp chí chuyên ngành nào?", options: ["Tạp chí Nghiên cứu Quốc tế hoặc Nghiên cứu Biển đảo", "Các trang truyện tranh giải trí", "Tạp chí thời trang quốc tế", "Các diễn đàn công nghệ máy tính"], answer: 0 },
+  { question: "Lòng tự hào và trách nhiệm bảo vệ chủ quyền biển đảo cần được học sinh nuôi dưỡng từ đâu?", options: ["Từ những hành động nhỏ trong học tập, rèn luyện đạo đức và ý thức trách nhiệm hàng ngày với Tổ quốc", "Chỉ cần hô khẩu hiệu trên mạng", "Khi nào ra đảo mới cần nuôi dưỡng", "Khi có yêu cầu từ nhà trường"], answer: 0 ]
 ];
 
 const key = "islandQuizViet";
@@ -109,16 +117,16 @@ let idx = 0,
   clock = null,
   quizQuestions = [];
 
-const remoteLeaderboardUrl = "https://hoangsa-truongsa.onrender.com/leaderboard"; // Set this to your deployed backend URL after deploy, e.g. https://your-app.onrender.com/leaderboard
+const remoteLeaderboardUrl = "https://hoangsa-truongsa.onrender.com/leaderboard"; 
 
-function shuffleArray(array) {
+function shuffleArray(array) { 
   return array
     .map((item) => ({ item, sort: Math.random() }))
     .sort((a, b) => a.sort - b.sort)
     .map(({ item }) => item);
 }
 
-function prepareQuestion(question) {
+function prepareQuestion(question) { 
   const options = question.options.map((text, index) => ({ text, index }));
   const shuffled = shuffleArray(options);
   return {
@@ -129,11 +137,11 @@ function prepareQuestion(question) {
   };
 }
 
-function isRemoteEnabled() {
+function isRemoteEnabled() { 
   return !!remoteLeaderboardUrl;
 }
 
-async function fetchRemoteBoard() {
+async function fetchRemoteBoard() { 
   if (!isRemoteEnabled()) {
     throw new Error("Remote leaderboard not configured.");
   }
@@ -152,10 +160,7 @@ async function fetchRemoteBoard() {
   return data.sort((a, b) => b.point - a.point).slice(0, 10);
 }
 
-async function saveRemoteScore(name, point) {
-  if (!isRemoteEnabled()) {
-    throw new Error("Remote leaderboard not configured.");
-  }
+async function saveRemoteScore(name, point) { 
   const response = await fetch(remoteLeaderboardUrl, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
@@ -167,7 +172,7 @@ async function saveRemoteScore(name, point) {
   return await response.json();
 }
 
-const startScreen = document.getElementById("startScreen");
+const startScreen = document.getElementById("startScreen"); 
 const quizScreen = document.getElementById("quizScreen");
 const resultScreen = document.getElementById("resultScreen");
 const playerName = document.getElementById("playerName");
@@ -184,13 +189,13 @@ const startBtn = document.getElementById("startBtn");
 const nextBtn = document.getElementById("nextBtn");
 const retryBtn = document.getElementById("retryBtn");
 
-function setLeaderboardStatus(message, type = "info") {
+function setLeaderboardStatus(message, type = "info") { 
   if (!leaderboardStatus) return;
   leaderboardStatus.textContent = message;
   leaderboardStatus.className = `leaderboard-status ${type}`;
 }
 
-function readLocalBoard() {
+function readLocalBoard() { 
   try {
     return JSON.parse(localStorage.getItem(key) || "[]");
   } catch (error) {
@@ -200,14 +205,14 @@ function readLocalBoard() {
   }
 }
 
-function saveLocalBoard(name, point) {
+function saveLocalBoard(name, point) { 
   const list = readLocalBoard();
   list.push({ name, point, time: new Date().toLocaleDateString("vi-VN") });
   list.sort((a, b) => b.point - a.point);
   localStorage.setItem(key, JSON.stringify(list.slice(0, 10)));
 }
 
-function renderLocalBoard() {
+function renderLocalBoard() { 
   const list = readLocalBoard();
   leaderboardBody.innerHTML = "";
   if (!list.length) {
@@ -218,16 +223,9 @@ function renderLocalBoard() {
   list.forEach((item, i) => {
     let rankClass = "";
     let medal = i + 1;
-    if (i === 0) {
-      rankClass = "rank-1";
-      medal = "🥇 1";
-    } else if (i === 1) {
-      rankClass = "rank-2";
-      medal = "🥈 2";
-    } else if (i === 2) {
-      rankClass = "rank-3";
-      medal = "🥉 3";
-    }
+    if (i === 0) { rankClass = "rank-1"; medal = "🥇 1"; }
+    else if (i === 1) { rankClass = "rank-2"; medal = "🥈 2"; }
+    else if (i === 2) { rankClass = "rank-3"; medal = "🥉 3"; }
 
     const tr = document.createElement("tr");
     tr.innerHTML = `
@@ -240,47 +238,39 @@ function renderLocalBoard() {
   });
 }
 
-async function getBoard() {
+async function getBoard() { 
   const localList = readLocalBoard();
   if (!isRemoteEnabled()) {
-    setLeaderboardStatus("Leaderboard hiện đang hiển thị dữ liệu local. Cấu hình backend để chia sẻ điểm chung.", "warning");
+    setLeaderboardStatus("Leaderboard hiện đang hiển thị dữ liệu local.", "warning");
     return localList;
   }
   try {
-    setLeaderboardStatus("Đang tải leaderboard chung từ backend...", "info");
+    setLeaderboardStatus("Đang tải bảng vàng từ hệ thống...", "info");
     const list = await fetchRemoteBoard();
     if (list.length) {
-      setLeaderboardStatus("Leaderboard chung đã đồng bộ. Mọi người có thể xem cùng nhau.", "success");
+      setLeaderboardStatus("Bảng xếp hạng đã đồng bộ thành công!", "success");
       return list;
     }
-    setLeaderboardStatus("Backend chưa có dữ liệu. Đang hiển thị dữ liệu local tạm thời.", "warning");
     return localList;
   } catch (error) {
-    console.error("Error getting leaderboard:", error);
-    setLeaderboardStatus(`Không thể kết nối backend leaderboard. (${error.message})`, "error");
+    setLeaderboardStatus(`Lỗi kết nối máy chủ leaderboard.`, "error");
     return localList;
   }
 }
 
-async function saveBoard(name, point) {
+async function saveBoard(name, point) { 
   saveLocalBoard(name, point);
   renderLocalBoard();
-  if (!isRemoteEnabled()) {
-    setLeaderboardStatus("Điểm đã lưu cục bộ. Cấu hình backend để lưu chung mọi người.", "warning");
-    return;
-  }
-  setLeaderboardStatus("Đang đồng bộ điểm lên backend...", "info");
+  if (!isRemoteEnabled()) return;
   try {
     await saveRemoteScore(name, point);
-    setLeaderboardStatus("Điểm đã được lưu chung. Mọi người cùng xem được.", "success");
     await renderBoard();
   } catch (error) {
     console.error("Error saving to remote:", error);
-    setLeaderboardStatus(`Lưu backend thất bại. Điểm vẫn giữ local. (${error.message})`, "error");
   }
 }
 
-async function renderBoard() {
+async function renderBoard() { 
   const list = await getBoard();
   leaderboardBody.innerHTML = "";
   if (!list.length) {
@@ -291,16 +281,9 @@ async function renderBoard() {
   list.forEach((item, i) => {
     let rankClass = "";
     let medal = i + 1;
-    if (i === 0) {
-      rankClass = "rank-1";
-      medal = "🥇 1";
-    } else if (i === 1) {
-      rankClass = "rank-2";
-      medal = "🥈 2";
-    } else if (i === 2) {
-      rankClass = "rank-3";
-      medal = "🥉 3";
-    }
+    if (i === 0) { rankClass = "rank-1"; medal = "🥇 1"; }
+    else if (i === 1) { rankClass = "rank-2"; medal = "🥈 2"; }
+    else if (i === 2) { rankClass = "rank-3"; medal = "🥉 3"; }
 
     const tr = document.createElement("tr");
     tr.innerHTML = `
@@ -313,7 +296,7 @@ async function renderBoard() {
   });
 }
 
-function showQuestion() {
+function showQuestion() { 
   const q = quizQuestions[idx];
   questionText.textContent = `${idx + 1}. ${q.question}`;
   answerBox.innerHTML = "";
@@ -341,18 +324,18 @@ function showQuestion() {
   progressFill.style.width = `${(idx / quizQuestions.length) * 100}%`;
 }
 
-async function finishQuiz() {
+async function finishQuiz() { 
   clearInterval(clock);
   quizScreen.classList.add("hidden");
   resultScreen.classList.remove("hidden");
 
   let cheer =
     score >= quizQuestions.length * 0.8
-      ? "Đỉnh quá! Bạn thực sự là một người con yêu biển đảo."
+      ? "Xuất sắc! Bạn thực sự là một Đại sứ Tri thức Biển đảo."
       : score >= quizQuestions.length * 0.5
-        ? "Làm tốt lắm! Hãy tiếp tục phát huy nhé."
-        : "Không sao cả, mỗi lần chơi là một lần học mà!";
-  resultText.innerHTML = `<strong>${player}</strong> thân mến,<br>Bạn đã chinh phục được <strong>${score}/10</strong> câu hỏi.<br><br><i>${cheer}</i>`;
+        ? "Rất tốt! Hãy tiếp tục lan tỏa tinh thần yêu nước nhé."
+        : "Không sao cả, tìm hiểu thêm tư liệu lịch sử chính thống và thử lại nhé!";
+  resultText.innerHTML = `<strong>${player}</strong> thân mến,<br>Bạn đã trả lời đúng <strong>${score}/10</strong> câu hỏi kiểm tra.<br><br><i>${cheer}</i>`;
 
   reviewBox.innerHTML = "";
   quizQuestions.forEach((q, i) => {
@@ -365,13 +348,14 @@ async function finishQuiz() {
   await saveBoard(player, score);
 }
 
-startBtn.onclick = () => {
+startBtn.onclick = () => { 
   const name = playerName.value.trim();
   if (!name) return alert("Cho mình biết tên bạn trước khi bắt đầu nhé!");
   player = name;
   idx = 0;
   score = 0;
   picks = [];
+  // Hệ thống tự động xáo trộn mảng 100 câu hỏi, sau đó bốc lấy đúng 10 câu ngẫu nhiên làm đề kiểm tra
   quizQuestions = shuffleArray(questions).map(prepareQuestion).slice(0, 10);
   timeLeft = 120;
   showName.textContent = player;
@@ -387,7 +371,7 @@ startBtn.onclick = () => {
   }, 1000);
 };
 
-nextBtn.onclick = () => {
+nextBtn.onclick = () => { 
   idx++;
   if (idx >= quizQuestions.length) {
     finishQuiz();
@@ -396,16 +380,14 @@ nextBtn.onclick = () => {
   }
 };
 
-retryBtn.onclick = () => {
+retryBtn.onclick = () => { 
   clearInterval(clock);
   resultScreen.classList.add("hidden");
   startScreen.classList.remove("hidden");
   startBtn.disabled = false;
 };
 
-// Initialize leaderboard
-(async () => {
+(async () => { 
   renderLocalBoard();
-  setLeaderboardStatus("Đang kiểm tra kết nối server leaderboard...", "info");
   await renderBoard();
 })();
