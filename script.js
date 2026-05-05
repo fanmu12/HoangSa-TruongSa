@@ -115,9 +115,19 @@ let idx = 0,
   player = "",
   timeLeft = 120,
   clock = null,
-  quizQuestions = [];
+  quizQuestions = [],
+  quizFinished = false;
 
 const remoteLeaderboardUrl = "https://hoangsa-truongsa.onrender.com/leaderboard"; // Set this to your deployed backend URL after deploy, e.g. https://your-app.onrender.com/leaderboard
+
+function escapeHtml(value) {
+  return String(value)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+}
 
 function shuffleArray(array) {
   return array
@@ -240,9 +250,9 @@ function renderLocalBoard() {
     const tr = document.createElement("tr");
     tr.innerHTML = `
       <td class="${rankClass}">${medal}</td>
-      <td style="font-weight: 600;">${item.name}</td>
+      <td style="font-weight: 600;">${escapeHtml(item.name)}</td>
       <td><span style="background: #e3f2fd; padding: 5px 12px; border-radius: 10px; color: #0077cc; font-weight: bold;">${item.point} / 10</span></td>
-      <td>${item.time}</td>
+      <td>${escapeHtml(item.time)}</td>
     `;
     leaderboardBody.appendChild(tr);
   });
@@ -313,9 +323,9 @@ async function renderBoard() {
     const tr = document.createElement("tr");
     tr.innerHTML = `
       <td class="${rankClass}">${medal}</td>
-      <td style="font-weight: 600;">${item.name}</td>
+      <td style="font-weight: 600;">${escapeHtml(item.name)}</td>
       <td><span style="background: #e3f2fd; padding: 5px 12px; border-radius: 10px; color: #0077cc; font-weight: bold;">${item.point} / 10</span></td>
-      <td>${item.time}</td>
+      <td>${escapeHtml(item.time)}</td>
     `;
     leaderboardBody.appendChild(tr);
   });
@@ -350,6 +360,8 @@ function showQuestion() {
 }
 
 async function finishQuiz() {
+  if (quizFinished) return;
+  quizFinished = true;
   clearInterval(clock);
   quizScreen.classList.add("hidden");
   resultScreen.classList.remove("hidden");
@@ -360,7 +372,7 @@ async function finishQuiz() {
       : score >= quizQuestions.length * 0.5
         ? "Làm tốt lắm! Hãy tiếp tục phát huy nhé."
         : "Không sao cả, mỗi lần chơi là một lần học mà!";
-  resultText.innerHTML = `<strong>${player}</strong> thân mến,<br>Bạn đã chinh phục được <strong>${score}/10</strong> câu hỏi.<br><br><i>${cheer}</i>`;
+  resultText.innerHTML = `<strong>${escapeHtml(player)}</strong> thân mến,<br>Bạn đã chinh phục được <strong>${score}/10</strong> câu hỏi.<br><br><i>${escapeHtml(cheer)}</i>`;
 
   reviewBox.innerHTML = "";
   quizQuestions.forEach((q, i) => {
@@ -374,12 +386,13 @@ async function finishQuiz() {
 }
 
 startBtn.onclick = () => {
-  const name = playerName.value.trim();
+  const name = playerName.value.trim().slice(0, 40);
   if (!name) return alert("Cho mình biết tên bạn trước khi bắt đầu nhé!");
   player = name;
   idx = 0;
   score = 0;
   picks = [];
+  quizFinished = false;
   quizQuestions = shuffleArray(questions).map(prepareQuestion).slice(0, 10);
   timeLeft = 120;
   showName.textContent = player;
@@ -389,6 +402,7 @@ startBtn.onclick = () => {
   quizScreen.classList.remove("hidden");
   showQuestion();
   clock = setInterval(() => {
+    if (quizFinished) return;
     timeLeft--;
     timer.textContent = timeLeft;
     if (timeLeft <= 0) finishQuiz();
@@ -396,6 +410,7 @@ startBtn.onclick = () => {
 };
 
 nextBtn.onclick = () => {
+  if (quizFinished) return;
   idx++;
   if (idx >= quizQuestions.length) {
     finishQuiz();
@@ -406,6 +421,7 @@ nextBtn.onclick = () => {
 
 retryBtn.onclick = () => {
   clearInterval(clock);
+  quizFinished = false;
   resultScreen.classList.add("hidden");
   startScreen.classList.remove("hidden");
   startBtn.disabled = false;
@@ -416,4 +432,4 @@ retryBtn.onclick = () => {
   renderLocalBoard();
   setLeaderboardStatus("Đang kiểm tra kết nối server leaderboard...", "info");
   await renderBoard();
-})();git add .
+})();

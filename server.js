@@ -4,15 +4,50 @@ const path = require('path');
 
 const DATA_FILE = path.join(__dirname, 'leaderboard.json');
 const PORT = process.env.PORT || 52345;
+const MAX_NAME_LENGTH = 40;
+const MAX_BODY_SIZE = 10 * 1024;
+
+function baseHeaders(contentType = 'application/json') {
+  return {
+    'Content-Type': contentType,
+    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Methods': 'GET,POST,OPTIONS',
+    'Access-Control-Allow-Headers': 'Content-Type',
+    'X-Content-Type-Options': 'nosniff',
+  };
+}
+
+function cleanJsonText(value) {
+  return String(value || '').replace(/^\uFEFF/, '').trim();
+}
+
+function readLeaderboardList() {
+  try {
+    const raw = fs.readFileSync(DATA_FILE, 'utf8');
+    const parsed = JSON.parse(cleanJsonText(raw) || '[]');
+    return Array.isArray(parsed) ? parsed : [];
+  } catch (error) {
+    return [];
+  }
+}
+
+function writeLeaderboardList(list) {
+  fs.writeFileSync(DATA_FILE, JSON.stringify(list, null, 2));
+}
+
+function sendJson(res, statusCode, payload) {
+  res.writeHead(statusCode, baseHeaders('application/json'));
+  res.end(JSON.stringify(payload));
+}
 
 // Hàm đọc file và gửi cho trình duyệt
 function serveFile(res, filePath, contentType) {
   fs.readFile(filePath, (err, content) => {
     if (err) {
-      res.writeHead(500);
+      res.writeHead(500, baseHeaders('text/plain; charset=utf-8'));
       res.end('Lỗi máy chủ: Không thể tải file.');
     } else {
-      res.writeHead(200, { 'Content-Type': contentType });
+      res.writeHead(200, baseHeaders(contentType));
       res.end(content);
     }
   });
@@ -23,11 +58,7 @@ const server = http.createServer((req, res) => {
 
   // Xử lý CORS
   if (method === 'OPTIONS') {
-    res.writeHead(204, {
-      'Access-Control-Allow-Origin': '*',
-      'Access-Control-Allow-Methods': 'GET,POST,OPTIONS',
-      'Access-Control-Allow-Headers': 'Content-Type',
-    });
+    res.writeHead(204, baseHeaders('text/plain; charset=utf-8'));
     return res.end();
   }
 
@@ -48,45 +79,46 @@ const server = http.createServer((req, res) => {
 
   // 4. API BẢNG XẾP HẠNG (Giữ nguyên logic cũ của bạn)
   if (url === '/leaderboard' && method === 'GET') {
-    try {
-      const data = fs.readFileSync(DATA_FILE, 'utf8');
-      res.writeHead(200, { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' });
-      return res.end(data);
-    } catch (e) {
-      res.writeHead(200, { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' });
-      return res.end(JSON.stringify([]));
-    }
+    return sendJson(res, 200, readLeaderboardList());
   }
 
   if (url === '/leaderboard' && method === 'POST') {
     let body = '';
-    req.on('data', chunk => body += chunk);
+    req.on('data', chunk => {
+      body += chunk;
+      if (body.length > MAX_BODY_SIZE) {
+        sendJson(res, 413, { error: 'Payload quá lớn.' });
+        req.destroy();
+      }
+    });
     req.on('end', () => {
       try {
         const data = JSON.parse(body);
-        let list = [];
-        try { list = JSON.parse(fs.readFileSync(DATA_FILE, 'utf8')); } catch(e) {}
+        const name = String(data.name || '').trim().slice(0, MAX_NAME_LENGTH);
+        const point = Number(data.point);
+        if (!name || !Number.isFinite(point)) {
+          return sendJson(res, 400, { error: 'Dữ liệu không hợp lệ.' });
+        }
+
+        const list = readLeaderboardList();
         list.push({
-          name: String(data.name).trim(),
-          point: data.point,
+          name,
+          point: Math.max(0, Math.min(10, Math.round(point))),
           time: data.time || new Date().toLocaleDateString('vi-VN'),
         });
         list.sort((a, b) => b.point - a.point);
         const result = list.slice(0, 10);
-        fs.writeFileSync(DATA_FILE, JSON.stringify(result, null, 2));
-        res.writeHead(201, { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' });
-        res.end(JSON.stringify(result));
+        writeLeaderboardList(result);
+        sendJson(res, 201, result);
       } catch (e) {
-        res.writeHead(400);
-        res.end();
+        sendJson(res, 400, { error: 'JSON không hợp lệ.' });
       }
     });
     return;
   }
 
   // 404 nếu không tìm thấy
-  res.writeHead(404);
-  res.end('Không tìm thấy trang.');
+  sendJson(res, 404, { error: 'Không tìm thấy trang.' });
 });
 
 server.listen(PORT, () => {
