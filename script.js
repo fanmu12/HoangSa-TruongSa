@@ -1,5 +1,5 @@
 const questions = [
-  // === NHÓM 1: LỊCH SỬ & XÁC LẬP CHỦ QUYỀN (Câu 1 - 25) ===
+  // === LỊCH SỬ & XÁC LẬP CHỦ QUYỀN (Câu 1 - 25) ===
   { question: "Hải đội nào được chính quyền chúa Nguyễn thành lập từ thế kỷ XVII để thực thi chủ quyền tại Hoàng Sa?", options: ["Hải đội Bắc Hải", "Hải đội Hoàng Sa", "Hải đội Trường Sa", "Thủy quân lục chiến"], answer: 1 },
   { question: "Hải đội Hoàng Sa kiêm quản hải đội nào để thực thi nhiệm vụ tại các đảo phía Nam và Côn Đảo?", options: ["Hải đội Trường Sa", "Hải đội Nam Hải", "Hải đội Bắc Hải", "Hải đội Tây Sa"], answer: 2 },
   { question: "Nhiệm vụ chính của đội Hoàng Sa dưới triều chúa Nguyễn là gì?", options: ["Thu lượm hàng hóa tàu đắm, đánh bắt hải sản quý và đo đạc lộ trình đường biển", "Chỉ đánh bắt cá gần bờ", "Chuyển chở hàng hóa giao thương quốc tế", "Xây dựng các căn cứ quân sự kiên cố"], answer: 0 },
@@ -26,7 +26,7 @@ const questions = [
   { question: "Văn bản hành chính nào của phương Tây thế kỷ XVII-XVIII thường gọi quần đảo Hoàng Sa bằng cái tên gì?", options: ["Paracels", "Spratlys", "Formosa", "Indochina"], answer: 0 },
   { question: "Tài liệu 'Bản đồ hàng hải phương Tây' vẽ khu vực Biển Đông thường ghi nhận Hoàng Sa thuộc quyền kiểm soát của vương quốc nào?", options: ["An Nam (Việt Nam)", "Siam (Thái Lan)", "Champa", "Cochinchine độc lập"], answer: 0 },
 
-  // === NHÓM 2: ĐỊA LÝ & HỆ SINH THÁI BIỂN (Câu 26 - 50) ===
+  // === ĐỊA LÝ & HỆ SINH THÁI BIỂN (Câu 26 - 50) ===
   { question: "Quần đảo Hoàng Sa hiện nay thuộc quyền quản lý hành chính của đơn vị nào?", options: ["Huyện Hoàng Sa, Thành phố Đà Nẵng", "Huyện Trường Sa, Tỉnh Khánh Hòa", "Huyện Lý Sơn, Tỉnh Quảng Ngãi", "Huyện Phú Quý, Tỉnh Bình Thuận"], answer: 0 },
   { question: "Quần đảo Trường Sa nằm ở phía Nam Biển Đông hiện thuộc quyền quản lý hành chính của tỉnh nào?", options: ["Tỉnh Khánh Hòa (Huyện Trường Sa)", "Thành phố Đà Nẵng", "Tỉnh Bà Rịa - Vũng Tàu", "Tỉnh Bình Thuận"], answer: 0 },
   { question: "Quần đảo Hoàng Sa gồm bao gồm hai nhóm đảo chính nào?", options: ["Nhóm Lưỡi Liềm và nhóm An Vĩnh", "Nhóm Song Tử và nhóm Sinh Tồn", "Nhóm Thị Tứ và nhóm Nam Yết", "Nhóm đảo Bình Nguyên và nhóm Trấn Biên"], answer: 0 },
@@ -53,7 +53,7 @@ const questions = [
   { question: "Hiện tượng xâm nhập mặn và bão biển tại các đảo được các chiến sĩ khắc phục bằng cách nào để trồng rau xanh?", options: ["Trồng rau trong khay, che chắn sóng gió bằng vách tre/nilon và tiết kiệm nước ngọt", "Nhập khẩu rau hoàn toàn từ nước ngoài", "Trồng rau trực tiếp trên bãi cát san hô không cần che chắn", "Sử dụng nước biển để tưới cây"], answer: 0 },
   { question: "Đảo đá nào thuộc quần đảo Hoàng Sa là nơi đặt ngọn hải đăng lâu đời do Pháp xây dựng?", options: ["Đảo Pattle (Hoàng Sa)", "Đảo Phú Lâm", "Đảo Linh Côn", "Đảo Tri Tôn"], answer: 0 },
 
-  // === NHÓM 3: PHÁP LÝ QUỐC TẾ & KINH TẾ BIỂN (Câu 51 - 75) ===
+  // === PHÁP LÝ QUỐC TẾ & KINH TẾ BIỂN (Câu 51 - 75) ===
   { question: "Công ước của Liên Hợp Quốc về Luật Biển năm 1982 được ký kết tại đâu và viết tắt là gì?", options: ["UNCLOS 1982 tại Jamaica", "WTO 1995 tại Geneva", "DOC 2002 tại Campuchia", "UNESCO 1945 tại Anh"], answer: 0 },
   { question: "Theo UNCLOS 1982, Lãnh hải của một quốc gia ven biển có chiều rộng bao nhiêu hải lý tính từ đường cơ sở?", options: ["12 hải lý", "24 hải lý", "200 hải lý", "350 hải lý"], answer: 0 },
   { question: "Vùng biển nằm tiếp liền và bên ngoài lãnh hải, nơi quốc gia kiểm soát thuế quan, y tế, di cư gọi là gì?", options: ["Vùng tiếp giáp lãnh hải (24 hải lý tính từ đường cơ sở)", "Vùng đặc quyền kinh tế", "Thềm lục địa", "Nội thủy"], answer: 0 },
@@ -80,7 +80,7 @@ const questions = [
   { question: "Chiến dịch mang tên 'Hành trình Tuổi trẻ vì biển đảo quê hương' do tổ chức nào phát động hàng năm?", options: ["Trung ương Đoàn TNCS Hồ Chí Minh", "Bộ Giáo dục và Đào tạo", "Bộ Văn hóa, Thể thao và Du lịch", "Hội khuyến học Việt Nam"], answer: 0 },
   { question: "Luật Biển Việt Nam năm 2012 quy định quần đảo Hoàng Sa và Trường Sa thuộc vùng biển nào của Việt Nam?", options: ["Thuộc phạm vi chủ quyền và lãnh thổ không thể tách rời của nước Cộng hòa xã hội chủ nghĩa Việt Nam", "Là vùng biển quốc tế tự do hoàn toàn", "Là vùng biển tranh chấp không thuộc ai", "Là khu vực kinh tế hợp tác tạm thời"], answer: 0 },
 
-  // === NHÓM 4: TRÁCH NHIỆM HỌC SINH & TUYÊN TRUYỀN (Câu 76 - 100) ===
+  // === TRÁCH NHIỆM HỌC SINH & TUYÊN TRUYỀN (Câu 76 - 100) ===
   { question: "Khi thấy thông tin sai lệch về chủ quyền biển đảo trên mạng xã hội, học sinh cần làm gì?", options: ["Báo cáo vi phạm, không chia sẻ và sử dụng tư liệu chính thống để phản bác", "Chia sẻ ngay để mọi người vào tranh cãi", "Bình luận bằng những lời lẽ thô tục", "Bỏ qua không quan tâm"], answer: 0 },
   { question: "Hành động nào thể hiện lòng yêu nước và ý thức bảo vệ biển đảo đúng đắn của học sinh?", options: ["Tích cực học tập lịch sử địa lý, lan tỏa thông tin đúng sự thật và tham gia các cuộc thi tìm hiểu biển đảo", "Kích động bạo lực trên không gian mạng", "Chỉ quan tâm đến biển đảo khi có bài kiểm tra", "Nghe theo các nguồn tin chưa kiểm chứng trên mạng"], answer: 0 },
   { question: "Trang web chính thống của cơ quan nào cung cấp thông tin chuẩn xác nhất về biên giới lãnh thổ Việt Nam?", options: ["Ủy ban Biên giới quốc gia - Bộ Ngoại giao Việt Nam", "Các trang blog cá nhân tự phát", "Các diễn đàn trò chơi trực tuyến", "Các hội nhóm giải trí trên mạng xã hội"], answer: 0 },
@@ -117,16 +117,16 @@ let idx = 0,
   clock = null,
   quizQuestions = [];
 
-const remoteLeaderboardUrl = "https://hoangsa-truongsa.onrender.com/leaderboard"; 
+const remoteLeaderboardUrl = "https://hoangsa-truongsa.onrender.com/leaderboard"; // Set this to your deployed backend URL after deploy, e.g. https://your-app.onrender.com/leaderboard
 
-function shuffleArray(array) { 
+function shuffleArray(array) {
   return array
     .map((item) => ({ item, sort: Math.random() }))
     .sort((a, b) => a.sort - b.sort)
     .map(({ item }) => item);
 }
 
-function prepareQuestion(question) { 
+function prepareQuestion(question) {
   const options = question.options.map((text, index) => ({ text, index }));
   const shuffled = shuffleArray(options);
   return {
@@ -137,11 +137,11 @@ function prepareQuestion(question) {
   };
 }
 
-function isRemoteEnabled() { 
+function isRemoteEnabled() {
   return !!remoteLeaderboardUrl;
 }
 
-async function fetchRemoteBoard() { 
+async function fetchRemoteBoard() {
   if (!isRemoteEnabled()) {
     throw new Error("Remote leaderboard not configured.");
   }
@@ -160,7 +160,10 @@ async function fetchRemoteBoard() {
   return data.sort((a, b) => b.point - a.point).slice(0, 10);
 }
 
-async function saveRemoteScore(name, point) { 
+async function saveRemoteScore(name, point) {
+  if (!isRemoteEnabled()) {
+    throw new Error("Remote leaderboard not configured.");
+  }
   const response = await fetch(remoteLeaderboardUrl, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
@@ -172,7 +175,7 @@ async function saveRemoteScore(name, point) {
   return await response.json();
 }
 
-const startScreen = document.getElementById("startScreen"); 
+const startScreen = document.getElementById("startScreen");
 const quizScreen = document.getElementById("quizScreen");
 const resultScreen = document.getElementById("resultScreen");
 const playerName = document.getElementById("playerName");
@@ -189,13 +192,13 @@ const startBtn = document.getElementById("startBtn");
 const nextBtn = document.getElementById("nextBtn");
 const retryBtn = document.getElementById("retryBtn");
 
-function setLeaderboardStatus(message, type = "info") { 
+function setLeaderboardStatus(message, type = "info") {
   if (!leaderboardStatus) return;
   leaderboardStatus.textContent = message;
   leaderboardStatus.className = `leaderboard-status ${type}`;
 }
 
-function readLocalBoard() { 
+function readLocalBoard() {
   try {
     return JSON.parse(localStorage.getItem(key) || "[]");
   } catch (error) {
@@ -205,14 +208,14 @@ function readLocalBoard() {
   }
 }
 
-function saveLocalBoard(name, point) { 
+function saveLocalBoard(name, point) {
   const list = readLocalBoard();
   list.push({ name, point, time: new Date().toLocaleDateString("vi-VN") });
   list.sort((a, b) => b.point - a.point);
   localStorage.setItem(key, JSON.stringify(list.slice(0, 10)));
 }
 
-function renderLocalBoard() { 
+function renderLocalBoard() {
   const list = readLocalBoard();
   leaderboardBody.innerHTML = "";
   if (!list.length) {
@@ -223,9 +226,16 @@ function renderLocalBoard() {
   list.forEach((item, i) => {
     let rankClass = "";
     let medal = i + 1;
-    if (i === 0) { rankClass = "rank-1"; medal = "🥇 1"; }
-    else if (i === 1) { rankClass = "rank-2"; medal = "🥈 2"; }
-    else if (i === 2) { rankClass = "rank-3"; medal = "🥉 3"; }
+    if (i === 0) {
+      rankClass = "rank-1";
+      medal = "🥇 1";
+    } else if (i === 1) {
+      rankClass = "rank-2";
+      medal = "🥈 2";
+    } else if (i === 2) {
+      rankClass = "rank-3";
+      medal = "🥉 3";
+    }
 
     const tr = document.createElement("tr");
     tr.innerHTML = `
@@ -238,39 +248,47 @@ function renderLocalBoard() {
   });
 }
 
-async function getBoard() { 
+async function getBoard() {
   const localList = readLocalBoard();
   if (!isRemoteEnabled()) {
-    setLeaderboardStatus("Leaderboard hiện đang hiển thị dữ liệu local.", "warning");
+    setLeaderboardStatus("Leaderboard hiện đang hiển thị dữ liệu local. Cấu hình backend để chia sẻ điểm chung.", "warning");
     return localList;
   }
   try {
-    setLeaderboardStatus("Đang tải bảng vàng từ hệ thống...", "info");
+    setLeaderboardStatus("Đang tải leaderboard chung từ backend...", "info");
     const list = await fetchRemoteBoard();
     if (list.length) {
-      setLeaderboardStatus("Bảng xếp hạng đã đồng bộ thành công!", "success");
+      setLeaderboardStatus("Leaderboard chung đã đồng bộ. Mọi người có thể xem cùng nhau.", "success");
       return list;
     }
+    setLeaderboardStatus("Backend chưa có dữ liệu. Đang hiển thị dữ liệu local tạm thời.", "warning");
     return localList;
   } catch (error) {
-    setLeaderboardStatus(`Lỗi kết nối máy chủ leaderboard.`, "error");
+    console.error("Error getting leaderboard:", error);
+    setLeaderboardStatus(`Không thể kết nối backend leaderboard. (${error.message})`, "error");
     return localList;
   }
 }
 
-async function saveBoard(name, point) { 
+async function saveBoard(name, point) {
   saveLocalBoard(name, point);
   renderLocalBoard();
-  if (!isRemoteEnabled()) return;
+  if (!isRemoteEnabled()) {
+    setLeaderboardStatus("Điểm đã lưu cục bộ. Cấu hình backend để lưu chung mọi người.", "warning");
+    return;
+  }
+  setLeaderboardStatus("Đang đồng bộ điểm lên backend...", "info");
   try {
     await saveRemoteScore(name, point);
+    setLeaderboardStatus("Điểm đã được lưu chung. Mọi người cùng xem được.", "success");
     await renderBoard();
   } catch (error) {
     console.error("Error saving to remote:", error);
+    setLeaderboardStatus(`Lưu backend thất bại. Điểm vẫn giữ local. (${error.message})`, "error");
   }
 }
 
-async function renderBoard() { 
+async function renderBoard() {
   const list = await getBoard();
   leaderboardBody.innerHTML = "";
   if (!list.length) {
@@ -281,9 +299,16 @@ async function renderBoard() {
   list.forEach((item, i) => {
     let rankClass = "";
     let medal = i + 1;
-    if (i === 0) { rankClass = "rank-1"; medal = "🥇 1"; }
-    else if (i === 1) { rankClass = "rank-2"; medal = "🥈 2"; }
-    else if (i === 2) { rankClass = "rank-3"; medal = "🥉 3"; }
+    if (i === 0) {
+      rankClass = "rank-1";
+      medal = "🥇 1";
+    } else if (i === 1) {
+      rankClass = "rank-2";
+      medal = "🥈 2";
+    } else if (i === 2) {
+      rankClass = "rank-3";
+      medal = "🥉 3";
+    }
 
     const tr = document.createElement("tr");
     tr.innerHTML = `
@@ -296,7 +321,7 @@ async function renderBoard() {
   });
 }
 
-function showQuestion() { 
+function showQuestion() {
   const q = quizQuestions[idx];
   questionText.textContent = `${idx + 1}. ${q.question}`;
   answerBox.innerHTML = "";
@@ -324,18 +349,18 @@ function showQuestion() {
   progressFill.style.width = `${(idx / quizQuestions.length) * 100}%`;
 }
 
-async function finishQuiz() { 
+async function finishQuiz() {
   clearInterval(clock);
   quizScreen.classList.add("hidden");
   resultScreen.classList.remove("hidden");
 
   let cheer =
     score >= quizQuestions.length * 0.8
-      ? "Xuất sắc! Bạn thực sự là một Đại sứ Tri thức Biển đảo."
+      ? "Đỉnh quá! Bạn thực sự là một người con yêu biển đảo."
       : score >= quizQuestions.length * 0.5
-        ? "Rất tốt! Hãy tiếp tục lan tỏa tinh thần yêu nước nhé."
-        : "Không sao cả, tìm hiểu thêm tư liệu lịch sử chính thống và thử lại nhé!";
-  resultText.innerHTML = `<strong>${player}</strong> thân mến,<br>Bạn đã trả lời đúng <strong>${score}/10</strong> câu hỏi kiểm tra.<br><br><i>${cheer}</i>`;
+        ? "Làm tốt lắm! Hãy tiếp tục phát huy nhé."
+        : "Không sao cả, mỗi lần chơi là một lần học mà!";
+  resultText.innerHTML = `<strong>${player}</strong> thân mến,<br>Bạn đã chinh phục được <strong>${score}/10</strong> câu hỏi.<br><br><i>${cheer}</i>`;
 
   reviewBox.innerHTML = "";
   quizQuestions.forEach((q, i) => {
@@ -348,14 +373,13 @@ async function finishQuiz() {
   await saveBoard(player, score);
 }
 
-startBtn.onclick = () => { 
+startBtn.onclick = () => {
   const name = playerName.value.trim();
   if (!name) return alert("Cho mình biết tên bạn trước khi bắt đầu nhé!");
   player = name;
   idx = 0;
   score = 0;
   picks = [];
-  // Hệ thống tự động xáo trộn mảng 100 câu hỏi, sau đó bốc lấy đúng 10 câu ngẫu nhiên làm đề kiểm tra
   quizQuestions = shuffleArray(questions).map(prepareQuestion).slice(0, 10);
   timeLeft = 120;
   showName.textContent = player;
@@ -371,7 +395,7 @@ startBtn.onclick = () => {
   }, 1000);
 };
 
-nextBtn.onclick = () => { 
+nextBtn.onclick = () => {
   idx++;
   if (idx >= quizQuestions.length) {
     finishQuiz();
@@ -380,14 +404,16 @@ nextBtn.onclick = () => {
   }
 };
 
-retryBtn.onclick = () => { 
+retryBtn.onclick = () => {
   clearInterval(clock);
   resultScreen.classList.add("hidden");
   startScreen.classList.remove("hidden");
   startBtn.disabled = false;
 };
 
-(async () => { 
+// Initialize leaderboard
+(async () => {
   renderLocalBoard();
+  setLeaderboardStatus("Đang kiểm tra kết nối server leaderboard...", "info");
   await renderBoard();
 })();
