@@ -201,6 +201,95 @@ const leaderboardStatus = document.getElementById("leaderboardStatus");
 const startBtn = document.getElementById("startBtn");
 const nextBtn = document.getElementById("nextBtn");
 const retryBtn = document.getElementById("retryBtn");
+const themeToggle = document.getElementById("themeToggle");
+const readingBar = document.getElementById("readingBar");
+const backToTopBtn = document.getElementById("backToTopBtn");
+
+function setupTheme() {
+  const savedTheme = localStorage.getItem("siteTheme");
+  const systemDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+  const isDark = savedTheme ? savedTheme === "dark" : systemDark;
+  document.body.classList.toggle("dark-theme", isDark);
+  if (themeToggle) themeToggle.textContent = isDark ? "☀️" : "🌙";
+}
+
+function setupThemeToggle() {
+  if (!themeToggle) return;
+  themeToggle.onclick = () => {
+    const isDark = document.body.classList.toggle("dark-theme");
+    localStorage.setItem("siteTheme", isDark ? "dark" : "light");
+    themeToggle.textContent = isDark ? "☀️" : "🌙";
+  };
+}
+
+function setupDetailCardNavigation() {
+  const cards = document.querySelectorAll(".detail-card[data-topic]");
+  cards.forEach((card) => {
+    card.setAttribute("role", "link");
+    card.setAttribute("tabindex", "0");
+    const topic = card.getAttribute("data-topic");
+    const toDetail = () => {
+      window.location.href = `chi-tiet.html?topic=${encodeURIComponent(topic)}`;
+    };
+    card.addEventListener("click", toDetail);
+    card.addEventListener("keydown", (event) => {
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        toDetail();
+      }
+    });
+  });
+}
+
+function setupReadingProgress() {
+  if (!readingBar) return;
+  const update = () => {
+    const scrollTop = window.scrollY || document.documentElement.scrollTop;
+    const height = document.documentElement.scrollHeight - window.innerHeight;
+    const progress = height > 0 ? Math.min(100, (scrollTop / height) * 100) : 0;
+    readingBar.style.width = `${progress}%`;
+  };
+  update();
+  window.addEventListener("scroll", update, { passive: true });
+}
+
+function setupBackToTop() {
+  if (!backToTopBtn) return;
+  const updateVisibility = () => {
+    backToTopBtn.classList.toggle("visible", window.scrollY > 420);
+  };
+  updateVisibility();
+  window.addEventListener("scroll", updateVisibility, { passive: true });
+  backToTopBtn.onclick = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+}
+
+function setupActiveNavHighlight() {
+  const sections = document.querySelectorAll("main section[id], #trang-chu");
+  const navLinks = document.querySelectorAll(".links a[href^='#']");
+  if (!sections.length || !navLinks.length || !("IntersectionObserver" in window)) return;
+
+  const linkById = new Map();
+  navLinks.forEach((link) => {
+    linkById.set(link.getAttribute("href").slice(1), link);
+  });
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        const id = entry.target.getAttribute("id");
+        navLinks.forEach((link) => link.classList.remove("is-active"));
+        const activeLink = linkById.get(id);
+        if (activeLink) activeLink.classList.add("is-active");
+      });
+    },
+    { rootMargin: "-30% 0px -55% 0px", threshold: 0.01 }
+  );
+
+  sections.forEach((section) => observer.observe(section));
+}
 
 function setLeaderboardStatus(message, type = "info") {
   if (!leaderboardStatus) return;
@@ -299,6 +388,15 @@ async function saveBoard(name, point) {
 }
 
 async function renderBoard() {
+  leaderboardBody.innerHTML = "";
+  for (let i = 0; i < 3; i++) {
+    const skeleton = document.createElement("tr");
+    skeleton.className = "skeleton-row";
+    skeleton.innerHTML =
+      "<td><div class='skeleton-box'></div></td><td><div class='skeleton-box'></div></td><td><div class='skeleton-box'></div></td><td><div class='skeleton-box'></div></td>";
+    leaderboardBody.appendChild(skeleton);
+  }
+
   const list = await getBoard();
   leaderboardBody.innerHTML = "";
   if (!list.length) {
@@ -429,6 +527,12 @@ retryBtn.onclick = () => {
 
 // Initialize leaderboard
 (async () => {
+  setupTheme();
+  setupThemeToggle();
+  setupDetailCardNavigation();
+  setupReadingProgress();
+  setupBackToTop();
+  setupActiveNavHighlight();
   renderLocalBoard();
   setLeaderboardStatus("Đang kiểm tra kết nối server leaderboard...", "info");
   await renderBoard();

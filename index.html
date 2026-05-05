@@ -13,6 +13,9 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <div class="reading-progress">
+      <span id="readingBar"></span>
+    </div>
     <header class="header">
       <div class="container nav">
         <a href="#trang-chu" class="logo">🇻🇳 Tổ Quốc Nơi Đầu Sóng</a>
@@ -24,6 +27,9 @@
           <a href="#quiz">Thử thách tri thức</a>
           <a href="#bang-xep-hang">Bảng vàng vinh danh</a>
         </div>
+        <button id="themeToggle" class="theme-toggle" type="button" aria-label="Chuyển giao diện sáng tối">
+          🌙
+        </button>
       </div>
     </header>
 
@@ -67,7 +73,7 @@
           định chủ quyền bền vững qua bao thế kỷ.
         </p>
         <div class="cards">
-          <article class="card">
+          <article class="card detail-card" data-topic="lich-su-khai-pha">
             <div class="img-container">
               <img
                 class="section-image"
@@ -81,7 +87,7 @@
               gác lại tình riêng vì biển đảo quê hương.
             </p>
           </article>
-          <article class="card">
+          <article class="card detail-card" data-topic="lich-su-khang-dinh">
             <div class="img-container">
               <img
                 class="section-image"
@@ -95,7 +101,7 @@
               hòa bình và liên tục.
             </p>
           </article>
-          <article class="card">
+          <article class="card detail-card" data-topic="lich-su-thoi-dai-moi">
             <div class="img-container">
               <img
                 class="section-image"
@@ -119,7 +125,7 @@
           thái vô giá mà mẹ thiên nhiên ban tặng.
         </p>
         <div class="cards">
-          <article class="card">
+          <article class="card detail-card" data-topic="dia-ly-vi-tri">
             <div class="img-container">
               <img
                 class="section-image"
@@ -133,7 +139,7 @@
               yên cho đất liền.
             </p>
           </article>
-          <article class="card">
+          <article class="card detail-card" data-topic="dia-ly-san-ho">
             <div class="img-container">
               <img
                 class="section-image"
@@ -147,7 +153,7 @@
               tế to lớn cho dân tộc.
             </p>
           </article>
-          <article class="card">
+          <article class="card detail-card" data-topic="dia-ly-khi-tuong">
             <div class="img-container">
               <img
                 class="section-image"
@@ -167,7 +173,7 @@
       <section id="hinh-thanh" class="section">
         <h2>Kỳ tích bồi tụ ngàn năm</h2>
         <div class="cards">
-          <article class="card">
+          <article class="card detail-card" data-topic="hinh-thanh-nen-da">
             <div class="img-container">
               <img
                 class="section-image"
@@ -181,7 +187,7 @@
               dưới lòng đại dương.
             </p>
           </article>
-          <article class="card">
+          <article class="card detail-card" data-topic="hinh-thanh-san-ho">
             <div class="img-container">
               <img
                 class="section-image"
@@ -195,7 +201,7 @@
               ngầm rộng lớn.
             </p>
           </article>
-          <article class="card">
+          <article class="card detail-card" data-topic="hinh-thanh-dao-noi">
             <div class="img-container">
               <img
                 class="section-image"
@@ -215,7 +221,7 @@
       <section id="bao-ve" class="section">
         <h2>Sứ mệnh của người trẻ</h2>
         <div class="two-col">
-          <article class="card">
+          <article class="card detail-card" data-topic="bao-ve-5-loi-hua">
             <div class="img-container">
               <img
                 class="section-image"
@@ -232,7 +238,7 @@
               <li>Tích cực tham gia các phong trào học tập tại trường.</li>
             </ul>
           </article>
-          <article class="card">
+          <article class="card detail-card" data-topic="bao-ve-thong-diep">
             <div class="img-container">
               <img
                 class="section-image"
@@ -328,6 +334,7 @@
         </div>
       </div>
     </footer>
+    <button id="backToTopBtn" class="back-to-top" type="button" aria-label="Lên đầu trang">↑</button>
 
     <script src="script.js"></script>
     <script>
